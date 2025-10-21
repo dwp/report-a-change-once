@@ -6,14 +6,28 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Report A Change Once Prototype </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+      {{ govukButton({
+        text: "Start prototype",
+        href: "start-page.html",
+        isStartButton: true
+      }) }}
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ <h2 class="govuk-heading-m"> About Report A Change Once</h2>
+<p>
+  Report A Change Once lets people tell DWP about a change of circumstance once.
+</p>
+<p>
+  During alpha, we will test the change of address journey with citizens on a selection of benefits including:
+</p>
+  <ul class="govuk-list govuk-list--bullet">
+        <li>Attendance Allowance</li>
+        <li>Carers Allowance</li>
+        <li>Disability Living Allowance</li>
+        <li>Pension Credit</li>
+      </ul>
   </div>
 </div>
 

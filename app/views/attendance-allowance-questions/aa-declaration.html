@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Attendance Allowance</span>
+        Declaration
+      </h1>
+
+<p>By reporting this change you agree that:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the information in this change of circumstance is complete and correct, as far as you know</li>
+  <li>the Attendance Allowance Unit may check your information with other government departments</li>
+  <li>you will pay back any money you have been overpaid if you are asked to</li>
+  <li>you will report any other changes that affect your Attendance Allowance claim as soon as possible</li>
+</ul>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You could be prosecuted or have to pay a financial penalty if you deliberately give wrong or incomplete information or don't report changes. Your Carer's Allowance may also be stopped or reduced.
+  </strong>
+</div>
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Select this box if you filled this form in for someone else
+        </label>
+      </div>
+
+    </div>
+    <br>
+          <form action="/task-list-aa-complete.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Agree and continue"
+        }) }}
+
+      </form>
+
+  </div>
+
+  
+
+{% endblock %}
