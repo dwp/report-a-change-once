@@ -33,7 +33,7 @@
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
-    You could be prosecuted or have to pay a financial penalty if you deliberately give wrong or incomplete information or don't report changes. Your Carer's Allowance may also be stopped or reduced.
+    You could be prosecuted or have to pay a financial penalty if you deliberately give wrong or incomplete information or don't report changes. Your Attendance Allowance may also be stopped or reduced.
   </strong>
 </div>
 
@@ -47,10 +47,12 @@
 
     </div>
     <br>
-          <form action="/task-list-aa-complete.html" method="post" novalidate>
+          <form action="aa-task-list-complete.html" method="post" novalidate>
 
         {{ govukButton({
-          text: "Agree and continue"
+          text: "Save and continue",
+          href: "aa-task-list-complete.html",
+        isButton: yes
         }) }}
 
       </form>

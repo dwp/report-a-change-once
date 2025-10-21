@@ -16,26 +16,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="ca-q2.html" method="post">
+      <form class="form" action="ca-check-my-answers.html" method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Attendance Allowance</span>
-  Is the change into a care home?
+  <span class="govuk-caption-l">Carer's Allowance</span>
+  Is their address the same as yours?
 </h1>
+    <div id="address-same-as-yours-hint" class="govuk-hint">
+      The person you provide care for must also contact DWP to report if their address has changed
+    </div>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="isTheChangeIntoACareHome" name="isTheChangeIntoACareHome" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="isTheChangeIntoACareHome">
+        <input class="govuk-radios__input" id="isTheirAddressTheSameAsYours" name="isTheirAddressTheSameAsYours" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="isTheirAddressTheSameAsYours">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="isTheChangeIntoACareHome-2" name="isTheChangeIntoACareHome" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="isTheChangeIntoACareHome-2">
+        <input class="govuk-radios__input" id="isTheirAddressTheSameAsYours-2" name="isTheirAddressTheSameAsYours" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="isTheirAddressTheSameAsYours-2">
           No
         </label>
       </div>
@@ -45,7 +48,7 @@
 
         {{ govukButton({
           text: "Save and continue",
-          href: "ca-q2.html",
+          href: "ca-check-my-answers.html",
         isButton: yes
         }) }}
 

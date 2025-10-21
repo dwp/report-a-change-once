@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Carer's Allowance</span>
+  <span class="govuk-caption-l">Attendance Allowance</span>
   Check your answers before continuing
 </h1>
 
@@ -34,7 +34,7 @@
                 {
                   href: "aa-q1",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "Is the change into a care home?"
                 }
               ]
             }
@@ -45,7 +45,9 @@
       <form action="/aa-declaration.html" method="post" novalidate>
 
         {{ govukButton({
-          text: "Save and continue"
+          text: "Save and continue",
+          href: "aa-declaration",
+        isButton: yes
         }) }}
 
       </form>

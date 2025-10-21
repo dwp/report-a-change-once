@@ -15,6 +15,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+<form class="form" action="ca-declaration.html" method="post">
+
+<div class="govuk-form-group">
+
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Carer's Allowance</span>
   Check your answers before continuing
@@ -27,50 +31,52 @@
               text: "Are you still providing care for 35 hours or more each week?"
             },
             value: {
-              text: "Yes"
+              text: data["AreYouStillProvidingCareFor35HoursOrMoreEachWeek"]
             },
             actions: {
               items: [
                 {
                   href: "ca-q1",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "Are you still providing care for 35 hours or more each week?"
                 }
               ]
             }
           }
           ,
+
           {
             key: {
               text: "Has the person you provide care for changed address?"
             },
             value: {
-              text: "Yes"
+              text: data["hasThePersonYouProvideCareForChangedAddress"]
             },
             actions: {
               items: [
                 {
                   href: "ca-q2",
                   text: "Change",
-                  visuallyHiddenText: "Question 2"
+                  visuallyHiddenText: "Has the person you provide care for changed address?"
                 }
               ]
             }
           }
           ,
+
           {
             key: {
               text: "Is their address the same as yours?"
             },
             value: {
-              text: "No"
+              text: data["isTheirAddressTheSameAsYours"]
             },
             actions: {
               items: [
                 {
                   href: "ca-q3",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "Is their address the same as yours?"
                 }
               ]
             }
@@ -78,10 +84,12 @@
         ]
       }) }}
 
-      <form action="/ca-declaration.html" method="post" novalidate>
+      <form action="ca-declaration.html" method="post" novalidate>
 
         {{ govukButton({
-          text: "Save and continue"
+          text: "Save and continue",
+          href: "ca-declaration.html",
+        isButton: yes
         }) }}
 
       </form>
