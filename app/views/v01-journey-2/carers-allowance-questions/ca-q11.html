@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="ca-check-my-answers.html" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Carer's Allowance</span>
+  Select their address
+</h1>
+
+<p> 1 addresses found for <strong>22</strong> and <strong>SE12 6AB</strong> <a href="/path/of/page">Change</a>.</p>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+          22 BROAD ROAD, LONDON
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "ca-check-my-answers.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

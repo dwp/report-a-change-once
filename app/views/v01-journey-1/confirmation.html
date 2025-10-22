@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "We have received your change request",
+        html: ""
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        It can take six to eight weeks to process this change for the benefits you receive.
+      </p>
+
+        {{ govukButton({
+          text: "Return to your account home",
+          href: "account-home.html",
+        isButton: yes
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Attendance Allowance</span>
+  Check your answers before continuing
+</h1>
+
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you live in England, Scotland or Wales?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Do you live in England, Scotland or Wales?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is this move permanent or temporary?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is this move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q4",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Brick Lane, London, SE12 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q5",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/coa-task-list-complete.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "coa-task-list-complete",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

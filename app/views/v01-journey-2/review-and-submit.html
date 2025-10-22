@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Tell DWP about a change of address</span>
+  Check your answers before sending your changes
+</h1>
+
+<h2 class="govuk-heading-m">
+  Carer's Allowance
+</h2>
+
+ {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you live in England, Scotland or Wales?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Do you live in England, Scotland or Wales?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is this move permanent or temporary?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is this move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q4",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Brick Lane, London, SE12 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q6",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Are you still providing care for 35 hours or more each week?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "ca-q7",
+                  text: "Change",
+                  visuallyHiddenText: "Are you still providing care for 35 hours or more each week?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Has the person you provide care for changed address?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "ca-q8",
+                  text: "Change",
+                  visuallyHiddenText: "Has the person you provide care for changed address?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is their address the same as yours?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "ca-q9",
+                  text: "Change",
+                  visuallyHiddenText: "Is their address the same as yours?"
+                }
+              ]
+            }
+          }
+          ,
+
+                    {
+            key: {
+              text: "Select their address"
+            },
+            value: {
+              text: "22 Broad Road, London"
+            },
+            actions: {
+              items: [
+                {
+                  href: "ca-q11",
+                  text: "Change",
+                  visuallyHiddenText: "Select their address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+<br>
+<h2 class="govuk-heading-m">
+  Attendance Allowance
+</h2>
+
+ {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you live in England, Scotland or Wales?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Do you live in England, Scotland or Wales?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is this move permanent or temporary?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is this move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q4",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Brick Lane, London, SE12 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q6",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Is the change into a care home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "aa-q1.html",
+                  text: "Change",
+                  visuallyHiddenText: "Is the change into a care home?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+     
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          The information I have provided is correct
+        </label>
+      </div>
+
+    </div>
+<br>
+      <form action="/confirmation.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Agree and submit",
+          href: "confirmation.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
