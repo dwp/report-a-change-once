@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="coa-task-list-complete.html" method="post">
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Education</span>
+    How many hours do you study for?</h1>
+
+    <div class="govuk-form-group">
+
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "coa-task-list-complete.html",
+        isButton: yes
+        }) }}
+  <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+</div>
+  
+</fieldset>
+</div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

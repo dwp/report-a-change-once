@@ -1,0 +1,319 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Report a change once</span>
+  Check your answers before sending your changes
+</h1>
+
+<h2 class="govuk-heading-m">
+  Carer's Allowance
+</h2>
+
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you live in England, Scotland or Wales?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Do you live in England, Scotland or Wales?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is this move permanent or temporary?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is this move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Are you still providing care for 35 hours or more each week?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Are you still providing care for 35 hours or more each week?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Has the person you provide care for changed address?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Has the person you provide care for changed address?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is the address the same as yours?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is the address the same as yours?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Are you in full-time education?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Are you in full-time education?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Are you studying for 21 hours a week or more?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Are you studying for 21 hours a week or more?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Are you earning £196 or less a week after tax, National Insurance and expenses?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Are you earning £196 or less a week after tax, National Insurance and expenses?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+<br>
+<h2 class="govuk-heading-m">
+  Attendance Allowance
+</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is the change into a care home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "aa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Is the change into a care home?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <br>
+<h2 class="govuk-heading-m">
+  Change of address
+</h2>
+
+     {{ govukSummaryList({
+        rows: [
+         {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q4",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Brick Lane, London, SE12 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q5",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <br>
+<h2 class="govuk-heading-m">
+  Education
+</h2>
+
+     {{ govukSummaryList({
+        rows: [
+         {
+            key: {
+              text: "How many hours do you study for?"
+            },
+            value: {
+              text: "30"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "How many hours do you study for?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <br>
+<h3 class="govuk-heading-s">Now send your changes</h3>
+
+<p>By submitting your changes you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Agree and submit",
+          href: "confirmation.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+
+    </div>
+  </div>
+{% endblock %}

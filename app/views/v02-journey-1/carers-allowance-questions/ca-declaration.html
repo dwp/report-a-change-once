@@ -16,47 +16,39 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <form class="form" action="task-list-ca-complete.html" method="post">
+
       <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Attendance Allowance</span>
+          <span class="govuk-caption-l">Carer's Allowance</span>
         Declaration
       </h1>
 
 <p>By reporting this change you agree that:</p>
 <ul class="govuk-list govuk-list--bullet">
   <li>the information in this change of circumstance is complete and correct, as far as you know</li>
-  <li>the Attendance Allowance Unit may check your information with other government departments</li>
+  <li>the Carer's Allowance Unit will check your record and the record of the person you provide care for on DWP systems</li>
+  <li>the Carer's Allowance Unit may check your information with other government departments</li>
   <li>you will pay back any money you have been overpaid if you are asked to</li>
-  <li>you will report any other changes that affect your Attendance Allowance claim as soon as possible</li>
+  <li>you will report any other changes that affect your Carer's Allowance claim as soon as possible</li>
 </ul>
 
 <div class="govuk-warning-text">
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
-    You could be prosecuted or have to pay a financial penalty if you deliberately give wrong or incomplete information or don't report changes. Your Attendance Allowance may also be stopped or reduced.
+    You could be prosecuted or have to pay a financial penalty if you deliberately give wrong or incomplete information or don't report changes. Your Carer's Allowance may also be stopped or reduced.
   </strong>
 </div>
-
     <br>
-          <form action="aa-task-list-complete.html" method="post" novalidate>
+          <form action="task-list-ca-complete.html" method="post" novalidate>
+
 
         {{ govukButton({
           text: "Save and continue",
-          href: "aa-task-list-complete.html",
-        isButton: yes,
-{{govukLink({
-  text: "Cancel",
-  href: "#",
-})}},
-        
+          href: "task-list-ca-complete.html",
+        isButton: yes
         }) }}
-  
-  <div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Accept and continue
-  </button>
-  <a class="govuk-link" href="#">Cancel</a>
-</div>
+
       </form>
 
   </div>

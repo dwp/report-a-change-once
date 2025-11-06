@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Attendance Allowance</span>
+  Check your answers before continuing
+</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is the change into a care home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "aa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Is the change into a care home?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/aa-declaration.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "aa-declaration",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

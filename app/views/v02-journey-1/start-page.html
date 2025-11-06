@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Report a change once
+      </h1>
+<p class="govuk-body">Report a change once is an online service that lets you report a change in circumstances to the Department for Work and Pensions (DWP) in one place.</p>
+<p>This is a new service so some benefits and types of circumstances are not online yet.</p>
+
+<h2 class="govuk-heading-m">You can use this service for the following benefits</h2>
+
+<p>If you continue, you can tell us about a change of circumstances online for:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Attendance Allowance</li>
+  <li>Carer's Allowance</li>
+</ul>
+
+<h2 class="govuk-heading-m">You cannot use this service for some of your benefits</h2>
+<h3 class="govuk-heading-s"> Universal Credit</h3>
+<p>You can update your address using your <a href="https://www.gov.uk/sign-in-universal-credit">Universal Credit online account</a> if you have one or contact the <a href="https://www.gov.uk/universal-credit/contact-universal-credit">Universal Credit helpline</a></p>  
+
+<h3 class="govuk-heading-s"> Personal Independence Payment</h3>
+<p>You can update your address by calling the <a href="https://www.gov.uk/disability-benefits-helpline">Disability Service Centre</a></p>  
+<br>
+      {{ govukButton({
+        text: "Start now",
+        href: "starting-question.html",
+        isStartButton: true
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

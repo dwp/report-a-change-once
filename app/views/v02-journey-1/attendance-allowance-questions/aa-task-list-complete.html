@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <!-- <h1 class="govuk-heading-l">{{ serviceName }}</h1>
+
+      <h2 class="govuk-heading-m">[ Heading for first set of tasks ]</h2> 
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Name of first task"
+            },
+            href: "#",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Name of second task"
+            },
+            href: "#",
+            status: incompleteStatus
+          }
+        ]
+      }) }} -->
+
+      <h1 class="govuk-heading-l">Report a change once</h1>
+      
+      <p>
+You need to answer questions for each benefit you receive. We may also ask you to upload evidence.
+      </p>
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Carer's Allowance"
+            },
+            href: "carers-allowance-questions/ca-q1.html",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Attendance Allowance"
+            },
+            href: "#",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Change details"
+            },
+            href: "../change-of-address-details/coa-q1.html",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Upload evidence"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Review and submit"
+            },
+            href: "#",
+            status: incompleteStatus
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-s">Need to call DWP?</h3>
+
+      <p>It's quicker to inform DWP about a change online. 
+If you need to call us your 6 digit code is: 012 456.</p>
+
+    </div>
+  </div>
+{% endblock %}
