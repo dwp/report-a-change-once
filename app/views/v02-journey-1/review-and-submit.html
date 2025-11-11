@@ -24,6 +24,10 @@
   Carer's Allowance
 </h2>
 
+<p>
+  The following information will be sent to Carer's Allowance.
+</p>
+
      {{ govukSummaryList({
         rows: [
           {
@@ -58,6 +62,63 @@
                   href: "coa-q2",
                   text: "Change",
                   visuallyHiddenText: "Is this move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No, my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Brick Lane, London, SE12 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
                 }
               ]
             }
@@ -159,6 +220,26 @@
           }
           ,
 
+                    {
+            key: {
+              text: "How many hours do you study for?"
+            },
+            value: {
+              text: "30"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q2",
+                  text: "Change",
+                  visuallyHiddenText: "How many hours do you study for?"
+                }
+              ]
+            }
+          }
+          ,
+
+          
           {
             key: {
               text: "Are you earning £196 or less a week after tax, National Insurance and expenses?"
@@ -183,11 +264,14 @@
   Attendance Allowance
 </h2>
 
-      {{ govukSummaryList({
+<p>
+  The following information will be sent to Attendance Allowance
+</p>
+       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Is the change into a care home?"
+              text: "Is the move into a care home?"
             },
             value: {
               text: "No"
@@ -195,24 +279,16 @@
             actions: {
               items: [
                 {
-                  href: "aa-q1",
+                  href: "coa-q1",
                   text: "Change",
-                  visuallyHiddenText: "Is the change into a care home?"
+                  visuallyHiddenText: "Is the move into a care home?"
                 }
               ]
             }
           }
-        ]
-      }) }}
-
-      <br>
-<h2 class="govuk-heading-m">
-  Change of address
-</h2>
-
-     {{ govukSummaryList({
-        rows: [
-         {
+          ,
+          
+           {
             key: {
               text: "When did you move?"
             },
@@ -231,7 +307,7 @@
           }
           ,
 
-           {
+         {
             key: {
               text: "Is this your home address?"
             },
@@ -249,8 +325,8 @@
             }
           }
           ,
-
-         {
+      
+          {
             key: {
               text: "Select your address"
             },
@@ -270,32 +346,6 @@
         ]
       }) }}
 
-      <br>
-<h2 class="govuk-heading-m">
-  Education
-</h2>
-
-     {{ govukSummaryList({
-        rows: [
-         {
-            key: {
-              text: "How many hours do you study for?"
-            },
-            value: {
-              text: "30"
-            },
-            actions: {
-              items: [
-                {
-                  href: "coa-q3",
-                  text: "Change",
-                  visuallyHiddenText: "How many hours do you study for?"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
 
       <br>
 <h3 class="govuk-heading-s">Now send your changes</h3>
