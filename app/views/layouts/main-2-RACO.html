@@ -1,0 +1,57 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+
+    {{ govukHeader() }}
+
+    <section aria-label="Service information" class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <span class="govuk-service-navigation__service-name">
+        <a href="../index.html" class="govuk-service-navigation__link">
+        Report a change once
+        </a>
+      </span>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Account home
+            </a>
+          </li>
+                  <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              Get proof of your benefits
+            </a>
+          </li>
+         <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="#">
+              View your personal details
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Report a change once</strong>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+ <!--   {{ govukServiceNavigation({
+        serviceName: serviceName
+})}}-->
+
+{% endblock %}
