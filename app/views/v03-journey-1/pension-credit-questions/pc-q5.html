@@ -1,0 +1,70 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="pc-q6.html" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Pension Credit</span>
+  Did you travel abroad due to the death of a partner, child, or qualifying young person who normally lives with you?
+</h1>
+    <div id="travel-due-to-a-death-hint" class="govuk-hint">
+    Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training.
+  </div>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="TravelDueToADeath" name="TravelDueToADeath" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="TravelDueToADeath">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="TravelDueToADeath-2" name="TravelDueToADeath" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="TravelDueToADeath-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "pc-q6.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

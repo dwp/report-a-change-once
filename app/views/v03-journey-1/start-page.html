@@ -1,0 +1,62 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tell DWP about a change
+      </h1>
+<p class="govuk-body">You can tell us about a change for some of your benefits using this service but not all of them. </p>
+<p>This is because not all of your benefits are on this service yet.</p>
+<p>When you tell us about your change we may ask you some other questions about your circumstances. This is to check you are getting the right amount of benefits.</p>
+
+<div class="govuk-inset-text">
+  This page is also available in <a href="#">Welsh</a></p> 
+</div>
+
+<h2 class="govuk-heading-m">You cannot use this service for some of your benefits</h2>
+<h3 class="govuk-heading-s">State Pension</h3>
+<p>You can tell us about a change by contacting the <a href="https://www.gov.uk/contact-pension-service">Pension Service</a></p> 
+
+<h2 class="govuk-heading-m">You can use this service for the following benefits</h2>
+
+<p>If you continue, you can tell us about changes for:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Pension Credit</li>
+  <li>Attendance Allowance</li>
+</ul>
+ 
+<br>
+      {{ govukButton({
+        text: "Start now",
+        href: "starting-question.html",
+        isStartButton: true
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
