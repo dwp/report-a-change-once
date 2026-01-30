@@ -1,0 +1,74 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="pc-q9.html" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Change details</span>
+  Select your address
+</h1>
+
+<p> 2 addresses found for <b>27</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+          Sunny Nursing Homes, 27 Albert Rd, London, AA3 1AB
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
+          27 Sage Road, London, AA3 1AB
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "pc-q9.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

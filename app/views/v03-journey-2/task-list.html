@@ -1,0 +1,133 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <h1 class="govuk-heading-l">{{ serviceName }}</h1>
+
+      <h2 class="govuk-heading-m">[ Heading for first set of tasks ]</h2> 
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Name of first task"
+            },
+            href: "#",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Name of second task"
+            },
+            href: "#",
+            status: incompleteStatus
+          }
+        ]
+      }) }} -->
+        
+
+      <h1 class="govuk-heading-l">Tell DWP about a change</h1>
+      
+      <p>You need to answer questions for each benefit you receive. We may also ask you to upload evidence.</p>
+
+      <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="pension-credit-questions/pc-q1.html" aria-describedby="task-list-1-status">
+            Pension Credit
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="task-list-1-status">
+        <strong class="govuk-tag govuk-tag--blue">
+          Not yet started
+        </strong>
+          
+        </div>
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="task-list-2-status">
+            Attendance Allowance
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="task-list-2-status">
+          <strong class="govuk-tag govuk-tag--grey">
+            Cannot start yet
+          </strong>
+        </div>
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="task-list-4-status">
+           Upload Evidence
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="task-list-4-status">
+          <strong class="govuk-tag govuk-tag--grey">
+            Cannot start yet
+          </strong>
+        </div>
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="task-list-3-status">
+           Review and submit
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="task-list-3-status">
+          <strong class="govuk-tag govuk-tag--grey">
+            Cannot start yet
+          </strong>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <h3 class="govuk-heading-s">Need to call DWP?</h3>
+
+      <p>It's quicker to inform DWP about a change online. 
+If you need to call us your 6 digit code is: <b>012 456.</b></p>
+
+    </div>
+  </div>
+{% endblock %}

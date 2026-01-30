@@ -1,0 +1,57 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="pc-q11.html" method="post">
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Change details</span>
+      How many bedrooms does this property have? </h1>
+  <div class="govuk-form-group">
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+  </div>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "pc-q11.html",
+        isButton: yes
+        }) }}
+</div>
+  
+</fieldset>
+</div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
