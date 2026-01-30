@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,51 +28,26 @@
 
       <form class="form" action="coc-q6.html" method="post">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="move-date-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Change details</span>
-        When did you sell your previous property?
-      </h1>
-    </legend>
-        <div id="move-date--hint" class="govuk-hint">
-      For example, 27 9 2025
-    </div>
-    <div class="govuk-date-input" id="move-date-">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="move-date-day">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-day" name="move-date-day" type="text" inputmode="numeric">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="move-date-month">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-month" name="move-date-month" type="text" inputmode="numeric">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="move-date-year">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-date-year" name="move-date-year" type="text" inputmode="numeric">
-        </div>
-      </div>
-    </div>
-  </fieldset>
-</div>
+      How long is the lease for? </h1>
+  <div class="govuk-form-group">
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+  </div>
 
         {{ govukButton({
           text: "Save and continue",
           href: "coc-q6.html",
         isButton: yes
         }) }}
+</div>
+  
+</fieldset>
+</div>
+
+
 
       </form>
 

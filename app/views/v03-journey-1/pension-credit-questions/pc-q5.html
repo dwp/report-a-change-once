@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Pension Credit Question 5 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,22 +33,19 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Pension Credit</span>
-  Did you travel abroad due to the death of a partner, child, or qualifying young person who normally lives with you?
+  Did you own your previous property? 
 </h1>
-    <div id="travel-due-to-a-death-hint" class="govuk-hint">
-    Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training.
-  </div>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="TravelDueToADeath" name="TravelDueToADeath" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="TravelDueToADeath">
+        <input class="govuk-radios__input" id="DidYouOwnYourPreviousProperty" name="DidYouOwnYourPreviousProperty" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousProperty">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="TravelDueToADeath-2" name="TravelDueToADeath" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="TravelDueToADeath-2">
+        <input class="govuk-radios__input" id="DidYouOwnYourPreviousProperty-2" name="DidYouOwnYourPreviousProperty" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousProperty-2">
           No
         </label>
       </div>

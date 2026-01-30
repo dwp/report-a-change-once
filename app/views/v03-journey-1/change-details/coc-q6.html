@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,28 +26,51 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="task-list-coc-complete.html" method="post">
+      <form class="form" action="coc-q7.html" method="post">
 
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="cost">
-    <span class="govuk-caption-l">Change details</span>
-      How much money did you receive from the sale of the property?
-    </label>
-  </h1>
-    <div id="move-date--hint" class="govuk-hint">
-      This is the amount in pounds you received after all the fees were paid including any outstanding mortgage.
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="move-date-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+          <span class="govuk-caption-l">Change details</span>
+        When did the lease start? 
+      </h1>
+    </legend>
+        <div id="move-date--hint" class="govuk-hint">
+      For example, 27 9 2025
     </div>
-  <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
-  </div>
+    <div class="govuk-date-input" id="move-date-">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-day" name="move-date-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-month" name="move-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-date-year" name="move-date-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
 </div>
-
 
         {{ govukButton({
           text: "Save and continue",
-          href: "task-list-coc-complete.html",
+          href: "coc-q7.html",
         isButton: yes
         }) }}
 

@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-Pension Credit Question 7 - {{ serviceName }} – GOV.UK Prototype Kit
+  Pension Credit Question 20 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,26 +26,26 @@ Pension Credit Question 7 - {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="pc-q8.html" method="post">
+      <form class="form" action="pc-q21.html" method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Pension Credit</span>
-Is this property currently up for sale? 
+Is this property outside of Great Britain? 
 </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertyCurrentlyUpForSale" name="IsThisPropertyCurrentlyUpForSale" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertyCurrentlyUpForSale">
+        <input class="govuk-radios__input" id="IsThisPropertyOutsideOfGreatBritain" name="IsThisPropertyOutsideOfGreatBritain" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertyOutsideOfGreatBritain">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertyCurrentlyUpForSale-2" name="IsThisPropertyCurrentlyUpForSale" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertyCurrentlyUpForSale-2">
+        <input class="govuk-radios__input" id="IsThisPropertyOutsideOfGreatBritain-2" name="IsThisPropertyOutsideOfGreatBritain" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertyOutsideOfGreatBritain-2">
           No
         </label>
       </div>
@@ -55,7 +55,7 @@ Is this property currently up for sale?
 
         {{ govukButton({
           text: "Save and continue",
-          href: "pc-q8.html",
+          href: "pc-q21.html",
         isButton: yes
         }) }}
 

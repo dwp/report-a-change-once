@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Pension Credit Question 15 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,26 +26,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="task-list-pc-complete.html" method="post">
+      <form class="form" action="pc-q16.html" method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Pension Credit</span>
-Do you or your partner receive an extra amount for severe disability?
+Has planning permission been refused for any proposed changes to this property?
 </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ChangesToPeopleLivingInYourHome" name="ChangesToPeopleLivingInYourHome" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="ChangesToPeopleLivingInYourHome">
+        <input class="govuk-radios__input" id="HasPlanningPermissionBeenRefused" name="HasPlanningPermissionBeenRefused" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="HasPlanningPermissionBeenRefused">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ChangesToPeopleLivingInYourHome-2" name="ChangesToPeopleLivingInYourHome" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="ChangesToPeopleLivingInYourHome-2">
+        <input class="govuk-radios__input" id="HasPlanningPermissionBeenRefused-2" name="HasPlanningPermissionBeenRefused" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="HasPlanningPermissionBeenRefused-2">
           No
         </label>
       </div>
@@ -55,7 +55,7 @@ Do you or your partner receive an extra amount for severe disability?
 
         {{ govukButton({
           text: "Save and continue",
-          href: "task-list-pc-complete.html",
+          href: "pc-q16.html",
         isButton: yes
         }) }}
 

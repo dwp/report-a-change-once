@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Pension Credit Question 10 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,20 +33,26 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Pension Credit</span>
-Did you own your previous home?
+Is this property freehold or leasehold? 
 </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="DidYouOwnYourPreviousHome" name="DidYouOwnYourPreviousHome" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousHome">
-          Yes
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="freehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold">
+          Freehold
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-2" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="leasehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-2">
+          Leasehold
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="DidYouOwnYourPreviousHome-2" name="DidYouOwnYourPreviousHome" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousHome-2">
-          No
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-3" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="none">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-3">
+          None of these 
         </label>
       </div>
     </div>
