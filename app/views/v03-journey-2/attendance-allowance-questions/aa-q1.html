@@ -1,57 +1,107 @@
-{% extends "layouts/main-3-RACO.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
-    </span>
-  </p>
-</div>
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <form class="form" action="task-list-aa-complete.html" method="post">
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Attendance Allowance</span>
-  Is the change into a care home?
+  Confirm the details we already hold about you are correct
 </h1>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="HaveYouMovedIntoYourNewAddress" name="HaveYouMovedIntoYourNewAddress" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="HaveYouMovedIntoYourNewAddress">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="HaveYouMovedIntoYourNewAddress-2" name="HaveYouMovedIntoYourNewAddress" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="HaveYouMovedIntoYourNewAddress-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+
+<p>The following details about you will be included in your change request for Attendance Allowance.</p>
+
+ {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is the change in to a care home?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is the change in to a care home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is this your home address?"
+            },
+            value: {
+              text: "No my address has changed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is this your home address?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Select your address"
+            },
+            value: {
+              text: "17 Sage Road, London, AA3 1AB"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Select your address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/task-list-aa-complete.html" method="post" novalidate>
 
         {{ govukButton({
           text: "Save and continue",
@@ -63,5 +113,4 @@
 
     </div>
   </div>
-
 {% endblock %}
