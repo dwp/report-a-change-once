@@ -26,7 +26,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="task-list.html" method="post">
+      <form method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
@@ -37,15 +37,28 @@
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+
+      <input class="govuk-radios__input"
+      id="change-address"
+      name="what-do-you-need-to-change"
+      type="radio"
+      value="address">
+        
+      <label class="govuk-label govuk-radios__label" for="what-do-you-need-to-change">
           Address
         </label>
       </div>
+
 <div class="govuk-radios__divider">or</div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio" value="abroad">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+    
+      <input class="govuk-radios__input"
+      id="change-other"
+      name="what-do-you-need-to-change"
+      type="radio"
+      value="other">
+
+        <label class="govuk-label govuk-radios__label" for="what-do-you-need-to-change">
           My change is not listed here
         </label>
       </div>
@@ -53,11 +66,9 @@
   </fieldset>
 </div>
 
-        {{ govukButton({
-          text: "Continue",
-          href: "task-list.html",
-        isButton: yes
-        }) }}
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
 
       </form>
 
