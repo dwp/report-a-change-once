@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-Pension Credit Question 4 - {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,25 +29,43 @@ Pension Credit Question 4 - {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="pc-q5.html" method="post">
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="move-date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-  Is your care funded by the local authority? 
-</h1>
+      <h1 class="govuk-fieldset__heading">
+          <span class="govuk-caption-l">Pension Credit</span>
+        When did you move?
+      </h1>
     </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsYourCareFundedByTheLocalAuthority" name="IsYourCareFundedByTheLocalAuthority" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="IsYourCareFundedByTheLocalAuthority">
-          Yes
-        </label>
+    <div id="move-date--hint" class="govuk-hint">
+      You can only change your address after you have moved.
+    </div>
+    <div id="move-date--hint" class="govuk-hint">
+      For example, 27 9 2025
+    </div>
+    <div class="govuk-date-input" id="move-date-">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-day" name="move-date-day" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsYourCareFundedByTheLocalAuthority-2" name="IsYourCareFundedByTheLocalAuthority" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="IsYourCareFundedByTheLocalAuthority-2">
-          No
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-month" name="move-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-date-year" name="move-date-year" type="text" inputmode="numeric">
+        </div>
       </div>
     </div>
   </fieldset>

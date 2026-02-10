@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+Pension Credit Question 5 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,27 +32,21 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Change details</span>
-What type of property is it? 
+  <span class="govuk-caption-l">Pension Credit</span>
+  Did you own your previous property? 
 </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="freehold">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold">
-          Bungalow, house or flat
-        </label>
-      </div>
-            <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-2" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="leasehold">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-2">
-          Block of houses or flats
+        <input class="govuk-radios__input" id="DidYouOwnYourPreviousProperty" name="DidYouOwnYourPreviousProperty" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousProperty">
+          Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-3" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="none">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-3">
-          Shop or warehouse 
+        <input class="govuk-radios__input" id="DidYouOwnYourPreviousProperty-2" name="DidYouOwnYourPreviousProperty" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="DidYouOwnYourPreviousProperty-2">
+          No
         </label>
       </div>
     </div>

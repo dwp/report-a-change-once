@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,21 +32,23 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-  Is this move permanent or temporary?
+      <span class="govuk-caption-l">Pension Credit</span>
+  Select your address
 </h1>
+
+<p> 2 addresses found for <b>10</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="PermanentMoveOrTemporary" name="PermanentMoveOrTemporary" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="PermanentMoveOrTemporary">
-          Permanent move
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+          10 Albert Rd, London, AA3 1AB
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="PermanentMoveOrTemporary-2" name="PermanentMoveOrTemporary" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="PermanentMoveOrTemporary-2">
-          Temporary move
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
+          10 Brick Lane, London, AA3 1AB
         </label>
       </div>
     </div>
@@ -60,6 +62,11 @@
         }) }}
 
       </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
 
     </div>
   </div>

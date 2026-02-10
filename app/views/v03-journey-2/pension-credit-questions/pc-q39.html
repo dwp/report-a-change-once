@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+  Pension Credit Question 25 - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,29 +26,27 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="coc-q4.html" method="post">
+      <form class="form" action="task-list-pc-complete.html" method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-      <span class="govuk-caption-l">Change details</span>
-  Select your address
+  <span class="govuk-caption-l">Pension Credit</span>
+Do you give us permission to arrange for this property to be valued by an independent valuer if necessary? 
 </h1>
-
-<p> 2 addresses found for <b>27</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
-          Sunny Nursing Homes, 27 Albert Rd, London, AA3 1AB
+        <input class="govuk-radios__input" id="ChangesToPeopleLivingInYourHome" name="ChangesToPeopleLivingInYourHome" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="ChangesToPeopleLivingInYourHome">
+          Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
-          27 Sage Road, London, AA3 1AB
+        <input class="govuk-radios__input" id="ChangesToPeopleLivingInYourHome-2" name="ChangesToPeopleLivingInYourHome" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="ChangesToPeopleLivingInYourHome-2">
+          No
         </label>
       </div>
     </div>
@@ -57,16 +55,11 @@
 
         {{ govukButton({
           text: "Save and continue",
-          href: "coc-q4.html",
+          href: "task-list-pc-complete.html",
         isButton: yes
         }) }}
 
       </form>
-
-    <p class="govuk-body">
-      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
-    </p>
-
 
     </div>
   </div>

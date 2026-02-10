@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-Pension Credit Question 3 -  {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,21 +32,23 @@ Pension Credit Question 3 -  {{ serviceName }} – GOV.UK Prototype Kit
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-  Are you living together as a married couple in your care home?
+      <span class="govuk-caption-l">Pension Credit</span>
+  Select your address
 </h1>
+
+<p> 2 addresses found for <b>27</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" name="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome">
-          Yes
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+          Sunny Nursing Homes, 27 Albert Rd, London, AA3 1AB
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome-2" name="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome-2">
-          No
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
+          27 Sage Road, London, AA3 1AB
         </label>
       </div>
     </div>
@@ -60,6 +62,11 @@ Pension Credit Question 3 -  {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
 
       </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
 
     </div>
   </div>

@@ -26,18 +26,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<span class="govuk-caption-xl">Account home</span>
-<h1 class="govuk-heading-xl">Kathleen Jones</h1>
+      <h1 class="govuk-heading-l">
+        Upload supporting evidence
+      </h1>
 
-<p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">Get proof of your benefits</a>
-</p>
-<p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">View your personal details</a>
-</p>
-<p class="govuk-body">
-  <a href="pc-q15.html" class="govuk-link govuk-link--no-visited-state">Tell DWP about a change</a>
-</p>
+      <p>
+        Your docs/photos will be returned to you
+    </p>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="file-upload-1">
+    Upload a file
+  </label>
+  <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+</div>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "task-list-coc-complete.html",
+        isButton: yes
+        }) }}
 
     </div>
   </div>

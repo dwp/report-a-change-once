@@ -26,32 +26,46 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="account-home-return.html" method="post">
+      <form class="form" action="pc-q11.html" method="post">
 
 <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="cost">
-      How much money did you receive from the sale of your previous home?
-    </label>
-  </h1>
-  <div id="have-you-moved-abroad-hint" class="govuk-hint">
-    This is the amount in pounds you received after all the fees were paid including any outstanding mortgage
-  </div>
-  <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
-  </div>
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Pension Credit</span>
+Is there a service charge on your new home? 
+</h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThereAServiceChargeOnYourNewHome" name="IsThereAServiceChargeOnYourNewHome" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="IsThereAServiceChargeOnYourNewHome">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThereAServiceChargeOnYourNewHome-2" name="IsThereAServiceChargeOnYourNewHome" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="IsThereAServiceChargeOnYourNewHome-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
 </div>
 
         {{ govukButton({
           text: "Save and continue",
-          href: "account-home-return.html",
+          href: "pc-q11.html",
         isButton: yes
         }) }}
 
       </form>
 
+
+      
     </div>
   </div>
+
+  
 
 {% endblock %}

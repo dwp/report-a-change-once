@@ -1,20 +1,10 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-Pension Credit Question 1 - {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
-    </span>
-  </p>
-</div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -32,21 +22,27 @@ Pension Credit Question 1 - {{ serviceName }} – GOV.UK Prototype Kit
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-  Are you a member of a couple?
+          <span class="govuk-caption-l">Pension Credit</span>
+Do we have the right home address?
 </h1>
+
+<p>Our records show your home address is:</p>
+
+<p>29 Broad Lane<br>London<br>SE15 6FJ</p>
+
+<p><strong>Is this your home address?</strong></p>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouAMemberOfACouple" name="AreYouAMemberOfACouple" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="AreYouAMemberOfACouple">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouAMemberOfACouple-2" name="AreYouAMemberOfACouple" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="AreYouAMemberOfACouple-2">
-          No
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
+          No, my address has changed
         </label>
       </div>
     </div>
@@ -56,7 +52,7 @@ Pension Credit Question 1 - {{ serviceName }} – GOV.UK Prototype Kit
         {{ govukButton({
           text: "Save and continue",
           href: "pc-q2.html",
-        isButton: yes
+        isButton: No
         }) }}
 
       </form>

@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+Pension Credit Question 3 -  {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,42 +28,36 @@
 
       <form class="form" action="pc-q8.html" method="post">
 
-<div class="govuk-width-container">
-  <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Change details</span>
-    What is the address of your previous property?</h1>
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="postcode">
-      Postcode
-    </label>
-    <div id="postcode-hint" class="govuk-hint">
-      For example, AA3 1AB
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Pension Credit</span>
+  Are you living together as a married couple in your care home?
+</h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" name="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome-2" name="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouLivingTogetherAsAMarriedCoupleInYourCareHome-2">
+          No
+        </label>
+      </div>
     </div>
-    <input
-      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
-  </div>
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="searchString">
-      Building number or name
-    </label>
-    <div id="searchString-hint" class="govuk-hint">
-      For example, 15 or Prospect Cottage
-    </div>
-    <input
-      class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
-  </div>
+  </fieldset>
+</div>
+
         {{ govukButton({
-          text: "Find address",
+          text: "Save and continue",
           href: "pc-q8.html",
         isButton: yes
         }) }}
-  <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
-</div>
-  
-</fieldset>
-</div>
-
-
 
       </form>
 

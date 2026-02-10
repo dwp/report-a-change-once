@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,31 +29,43 @@
       <form class="form" action="pc-q5.html" method="post">
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="move-date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-  Is your new home owned or rented?
-</h1>
+      <h1 class="govuk-fieldset__heading">
+          <span class="govuk-caption-l">Pension Credit</span>
+        When did you move?
+      </h1>
     </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="NewHomeOwnedOrRented" name="NewHomeOwnedOrRented" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="NewHomeOwnedOrRented">
-          Owned
-        </label>
+    <div id="move-date--hint" class="govuk-hint">
+      You can only change your address after you have moved.
+    </div>
+    <div id="move-date--hint" class="govuk-hint">
+      For example, 27 9 2025
+    </div>
+    <div class="govuk-date-input" id="move-date-">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-day" name="move-date-day" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="NewHomeOwnedOrRented-2" name="NewHomeOwnedOrRented" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="NewHomeOwnedOrRented-2">
-          Rented
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-month" name="move-date-month" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="NewHomeOwnedOrRented-3" name="NewHomeOwnedOrRented" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="NewHomeOwnedOrRented-3">
-          None of these
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-date-year" name="move-date-year" type="text" inputmode="numeric">
+        </div>
       </div>
     </div>
   </fieldset>

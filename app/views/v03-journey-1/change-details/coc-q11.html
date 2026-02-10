@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,9 +16,9 @@
   </p>
 </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -26,26 +26,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Upload supporting evidence
-      </h1>
+      <form class="form" action="coc-q12.html" method="post">
 
-      <p>
-        Your docs/photos will be returned to you
-    </p>
-
-<div class="govuk-form-group">
-  <label class="govuk-label" for="file-upload-1">
-    Upload a file
-  </label>
-  <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="cost">
+    <span class="govuk-caption-l">Change details</span>
+      How much do you pay for rent or ground rent excluding VAT? 
+    </label>
+  </h1>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+  </div>
 </div>
+
 
         {{ govukButton({
           text: "Save and continue",
-          href: "task-list-coc-complete.html",
+          href: "coc-q12.html",
         isButton: yes
         }) }}
+
+      </form>
 
     </div>
   </div>

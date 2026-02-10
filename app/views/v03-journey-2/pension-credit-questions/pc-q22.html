@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Pension Credit Question 14 - {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,36 +28,26 @@
 
       <form class="form" action="pc-q23.html" method="post">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-Has planning permission been granted for any proposed changes to this property?
-</h1>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="HasPlanningPermissionBeenGranted" name="HasPlanningPermissionBeenGranted" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="HasPlanningPermissionBeenGranted">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="HasPlanningPermissionBeenGranted-2" name="HasPlanningPermissionBeenGranted" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="HasPlanningPermissionBeenGranted-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Pension Credit</span>
+      How often do you pay rent or ground rent?  </h1>
+  <div class="govuk-form-group">
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+  </div>
 
         {{ govukButton({
           text: "Save and continue",
           href: "pc-q23.html",
         isButton: yes
         }) }}
+</div>
+  
+</fieldset>
+</div>
+
+
 
       </form>
 

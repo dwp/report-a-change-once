@@ -26,20 +26,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="task-list-return.html" method="post">
+      <form class="form" action="pc-q12.html" method="post">
 
 <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="cost">
-      You have 27 days left to complete your change
-    </label>
-  </h1>
-<p>You have a change in progress. If you do not complete and submit your change by 22nd February at 11:56 am you will need to start a new one.</p>
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Pension Credit</span>
+Is there a mortgage on your new home? 
+</h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThereAMortgageOnYourNewHome" name="IsThereAMortgageOnYourNewHome" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="IsThereAMortgageOnYourNewHome">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThereAMortgageOnYourNewHome-2" name="IsThereAMortgageOnYourNewHome" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="IsThereAMortgageOnYourNewHome-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
 </div>
 
         {{ govukButton({
-          text: "Continue",
-          href: "task-list-return.html",
+          text: "Save and continue",
+          href: "pc-q12.html",
         isButton: yes
         }) }}
 

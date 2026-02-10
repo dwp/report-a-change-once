@@ -28,45 +28,44 @@
 
       <form class="form" action="coc-q3.html" method="post">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<h1 class="govuk-heading-l">
-      <span class="govuk-caption-l">Change details</span>
-  Select your address
-</h1>
-
-<p> 2 addresses found for <b>27</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
-          Sunny Nursing Homes, 27 Albert Rd, London, AA3 1AB
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
-          27 Sage Road, London, AA3 1AB
-        </label>
-      </div>
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Change details</span>
+    Find an address</h1>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="postcode">
+      Postcode
+    </label>
+    <div id="postcode-hint" class="govuk-hint">
+      For example, AA3 1AB
     </div>
-  </fieldset>
-</div>
-
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="searchString">
+      Building number or name
+    </label>
+    <div id="searchString-hint" class="govuk-hint">
+      For example, 15 or Prospect Cottage
+    </div>
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
+  </div>
         {{ govukButton({
-          text: "Save and continue",
+          text: "Find address",
           href: "coc-q3.html",
         isButton: yes
         }) }}
+  <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+</div>
+  
+</fieldset>
+</div>
+
+
 
       </form>
-
-    <p class="govuk-body">
-      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
-    </p>
-
 
     </div>
   </div>

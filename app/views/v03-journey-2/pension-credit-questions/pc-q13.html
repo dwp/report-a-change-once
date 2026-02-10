@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-  Pension Credit Question 9 - {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,20 +33,26 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Pension Credit</span>
-Do you intend to live in this property? 
+What type of property is it? 
 </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="DoYouIntendToLiveInThisProperty" name="DoYouIntendToLiveInThisProperty" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="DoYouIntendToLiveInThisProperty">
-          Yes
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="freehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold">
+          Bungalow, house or flat
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-2" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="leasehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-2">
+          Block of houses or flats
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="DoYouIntendToLiveInThisProperty-2" name="DoYouIntendToLiveInThisProperty" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="DoYouIntendToLiveInThisProperty-2">
-          No
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-3" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="none">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-3">
+          Shop or warehouse 
         </label>
       </div>
     </div>

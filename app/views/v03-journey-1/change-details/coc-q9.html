@@ -28,25 +28,26 @@
 
       <form class="form" action="coc-q10.html" method="post">
 
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="cost">
-    <span class="govuk-caption-l">Change details</span>
-      What is the estimated value of this property?
-    </label>
-  </h1>
-  <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Change details</span>
+      How long is the lease for? </h1>
+  <div class="govuk-form-group">
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
   </div>
-</div>
-
 
         {{ govukButton({
           text: "Save and continue",
           href: "coc-q10.html",
         isButton: yes
         }) }}
+</div>
+  
+</fieldset>
+</div>
+
+
 
       </form>
 

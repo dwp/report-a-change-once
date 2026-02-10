@@ -28,26 +28,54 @@
 
       <form class="form" action="coc-q5.html" method="post">
 
-<div class="govuk-width-container">
-  <h1 class="govuk-heading-l">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="move-date-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
           <span class="govuk-caption-l">Change details</span>
-      How many bedrooms does this property have? </h1>
-  <div class="govuk-form-group">
-    <input
-      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
-  </div>
+        When did you move?
+      </h1>
+    </legend>
+    <div id="move-date--hint" class="govuk-hint">
+      You can only change your address after you have moved.
+    </div>
+    <div id="move-date--hint" class="govuk-hint">
+      For example, 27 9 2025
+    </div>
+    <div class="govuk-date-input" id="move-date-">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-day" name="move-date-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-date-month" name="move-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="move-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-date-year" name="move-date-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
         {{ govukButton({
           text: "Save and continue",
           href: "coc-q5.html",
         isButton: yes
         }) }}
-</div>
-  
-</fieldset>
-</div>
-
-
 
       </form>
 

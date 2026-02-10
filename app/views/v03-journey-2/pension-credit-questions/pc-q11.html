@@ -1,7 +1,7 @@
 {% extends "layouts/main-3-RACO.html" %}
 
 {% block pageTitle %}
-Pension Credit Question 7 - {{ serviceName }} – GOV.UK Prototype Kit
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,36 +28,42 @@ Pension Credit Question 7 - {{ serviceName }} – GOV.UK Prototype Kit
 
       <form class="form" action="pc-q12.html" method="post">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Pension Credit</span>
-Is this property currently up for sale? 
-</h1>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertyCurrentlyUpForSale" name="IsThisPropertyCurrentlyUpForSale" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertyCurrentlyUpForSale">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="IsThisPropertyCurrentlyUpForSale-2" name="IsThisPropertyCurrentlyUpForSale" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="IsThisPropertyCurrentlyUpForSale-2">
-          No
-        </label>
-      </div>
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Pension Credit</span>
+    What is the address of your previous property?</h1>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="postcode">
+      Postcode
+    </label>
+    <div id="postcode-hint" class="govuk-hint">
+      For example, AA3 1AB
     </div>
-  </fieldset>
-</div>
-
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="searchString">
+      Building number or name
+    </label>
+    <div id="searchString-hint" class="govuk-hint">
+      For example, 15 or Prospect Cottage
+    </div>
+    <input
+      class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
+  </div>
         {{ govukButton({
-          text: "Save and continue",
+          text: "Find address",
           href: "pc-q12.html",
         isButton: yes
         }) }}
+  <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+</div>
+  
+</fieldset>
+</div>
+
+
 
       </form>
 

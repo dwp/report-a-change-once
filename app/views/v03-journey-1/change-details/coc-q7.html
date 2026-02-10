@@ -28,19 +28,36 @@
 
       <form class="form" action="coc-q8.html" method="post">
 
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="cost">
-    <span class="govuk-caption-l">Change details</span>
-      How much do you pay for rent or ground rent excluding VAT? 
-    </label>
-  </h1>
-  <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
-  </div>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Change details</span>
+What type of property is it? 
+</h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="freehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold">
+          Bungalow, house or flat
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-2" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="leasehold">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-2">
+          Block of houses or flats
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="IsThisPropertFreeholdOrLeasehold-3" name="IsThisPropertFreeholdOrLeasehold" type="radio" value="none">
+        <label class="govuk-label govuk-radios__label" for="IsThisPropertFreeholdOrLeasehold-3">
+          Shop or warehouse 
+        </label>
+      </div>
+    </div>
+  </fieldset>
 </div>
-
 
         {{ govukButton({
           text: "Save and continue",
