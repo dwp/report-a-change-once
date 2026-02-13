@@ -1,0 +1,404 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
+    </span>
+  </p>
+</div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Tell DWP about a change</span>
+  Check your answers before sending your changes
+</h1>
+
+<h2 class="govuk-heading-m">
+  Pension Credit
+</h2>
+
+<p>
+  The following information will be sent to Pension Credit.
+</p>
+
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Have you moved into a care home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Have you moved into a care home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Have you moved abroad?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Have you moved abroad?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is the move permanent or temporary?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is the move permanent or temporary?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Is your new home owned or rented?"
+            },
+            value: {
+              text: "Owned"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is your new home owned or rented?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Did you own your previous home?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Did you own your previous home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Is there a service charge on your new home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is there a service charge on your new home?"
+                }
+              ]
+            }
+          }
+          ,
+
+         {
+            key: {
+              text: "Is there a mortgage on your new home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Is there a mortgage on your new home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "Have you sold your previous home?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Have you sold your previous home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "When did you sell your previous home?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "When did you sell your previous home?"
+                }
+              ]
+            }
+          }
+          ,
+
+          {
+            key: {
+              text: "How much money did you receive from the sale of your previous home?"
+            },
+            value: {
+              text: "£125,000"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "How much money did you receive from the sale of your previous home?"
+                }
+              ]
+            }
+          }
+          ,
+
+                    {
+            key: {
+              text: "Have you purchased your new home?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Have you purchased your new home?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "How much did you pay for your new home?"
+            },
+            value: {
+              text: "£120,000"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "How much did you pay for your new home?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Do you have more than £10,000 in savings?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Do you have more than £10,000 in savings?"
+                }
+              ]
+            }
+          }
+          ,
+
+           {
+            key: {
+              text: "Have there been any changes to the people living in your home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Have there been any changes to the people living in your home?"
+                }
+              ]
+            }
+          }
+          ,
+           
+          {
+            key: {
+              text: "Do you or your partner receive an extra amount for severe disability?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Do you or your partner receive an extra amount for severe disability?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+<br>
+<h2 class="govuk-heading-m">
+  Attendance Allowance
+</h2>
+
+<p>
+  The following information will be sent to Attendance Allowance
+</p>
+       {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is the move into a care home?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q1",
+                  text: "Change",
+                  visuallyHiddenText: "Is the move into a care home?"
+                }
+              ]
+            }
+          }
+          ,
+      
+          {
+            key: {
+              text: "When did you move?"
+            },
+            value: {
+              text: "27 09 2025"
+            },
+            actions: {
+              items: [
+                {
+                  href: "coa-q3",
+                  text: "Change",
+                  visuallyHiddenText: "When did you move?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <br>
+<h3 class="govuk-heading-s">Now send your changes</h3>
+
+<p>By submitting this change you agree that, to the best of your knowledge, the details you are providing are complete and correct.</p>
+
+<p>If you give wrong or incomplete information, or you do not report changes straight away, you may:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>be prosecuted</li>
+  <li>need to pay a financial penalty</li>
+  <li>have your benefits reduced or stopped</li>
+  <li>be paid too much and have to pay the money back</li>
+</ul>
+      <form action="/confirmation.html" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Agree and submit",
+          href: "confirmation.html",
+        isButton: yes
+        }) }}
+
+      </form>
+
+    </div>
+
+    </div>
+  </div>
+{% endblock %}

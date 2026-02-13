@@ -1,0 +1,67 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l"> Tell DWP about a change of address </h1>
+
+      <p>Contents</p>
+    <ul class="govuk-list">
+  <li><a class="govuk-link" href="gov-uk-start-page.html">Overview</a></li>
+  <li>Providing evidence</li>
+</ul>  
+
+<h2 class="govuk-heading-m">Providing evidence</h2>
+     <p>When you report a change using ‘Tell DWP about a change’, you may be asked to provide evidence.</p>
+     <p>The evidence you need to provide will depend on the type of change you are reporting. </p> 
+      
+      
+ <h3 class="govuk-heading-s">Evidence types</h3>   
+ 
+<h4 class="govuk-heading-s">Address</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>local authority</li>
+  <li>council tax bill</li>
+  <li>driving licence</li>
+  <li>utility bill</li>
+  <li>tenancy agreement</li>
+  <li>mortgage statement</li>
+</ul>
+
+<h4 class="govuk-heading-s">Capital</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>bank statements</li>
+  <li>annual statements</li>
+</ul>
+
+<h4 class="govuk-heading-s">Education</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>student loan documents</li>
+  <li>educational institute documents</li>
+</ul>
+
+<h4 class="govuk-heading-s">Earnings (employed and self-employed)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>payslips</li>
+  <li>bank statements</li>
+  <li>pension statements</li>
+  <li>P60</li>
+  <li>self-employed accounts</li>
+</ul>
+</div>
+  </div>
+
+{% endblock %}

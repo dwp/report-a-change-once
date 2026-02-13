@@ -1,0 +1,46 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "We have received your change request",
+        html: ""
+      }) }}
+
+      <p>If you have provided a mobile number or email address, we’ll send you confirmation of your changes and keep you updated on their progress.</p>
+      
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>We have sent your changes to the relevant benefit office. It can take two to four weeks to process them.
+      </p>
+
+      <p>
+        If we need to reassess your claim based on your changes we will contact you.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        How to report changes for your other benefits
+      </h2>
+
+      <p>To report changes to State Pension you need to <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a></p> 
+
+
+        {{ govukButton({
+          text: "Return to your account home",
+          href: "account-home.html",
+        isButton: yes
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
