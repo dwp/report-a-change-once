@@ -26,33 +26,46 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Upload proof of capital
-      </h1>
+      <h1 class="govuk-heading-l">Provide evidence</h1>
 
-      <p>
-        Upload an image or PDF of one of the following: 
-    </p>
+      <p>You will need to provide the following evidence as proof of your changes:</p>
 
+      <h2 class="govuk-heading-m">Proof of capital</h2>
     <ul class="govuk-list govuk-list--bullet">
   <li>completion statement</li>
 </ul>
 
-<h2 class="govuk-heading-m">If you do not have the evidence</h2>
-<p>The information you have entered will be saved so that you can return and upload your documents later. You will have 28 days to complete and send your changes.</p> 
-
-<h2 class="govuk-heading-m">If you cannot upload your evidence online</h2>
-<p>You should post your evidence if you cannot upload it online.</p>
-
-<p>Send your evidence to:</p>
-<p>DWP Evidence Office,<br>80 Hanover Way,<br>Broomhall,<br>Sheffield<br>S3 7UF</p>
-
 <div class="govuk-form-group">
-  <label class="govuk-label" for="file-upload-1">
-    Upload a file
-  </label>
-  <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        How do you want to send your evidence to us?
+      </h2>
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+          By digital upload
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          You will need to register or log into your account and upload your documents online
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn-2">
+          By post
+        </label>
+        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+          We will send you a letter including a return envelope to send your evidence to us
+        </div>
+      </div>
+    </div>
+  </fieldset>
 </div>
+
 
         {{ govukButton({
           text: "Save and continue",
