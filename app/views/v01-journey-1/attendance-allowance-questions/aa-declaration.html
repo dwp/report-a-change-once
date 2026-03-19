@@ -39,24 +39,14 @@
 
     <br>
           <form action="aa-task-list-complete.html" method="post" novalidate>
-
-        {{ govukButton({
+  
+                    {{ govukButton({
           text: "Save and continue",
           href: "aa-task-list-complete.html",
-        isButton: yes,
-{{govukLink({
-  text: "Cancel",
-  href: "#",
-})}},
-        
+        isButton: yes
         }) }}
-  
-  <div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Accept and continue
-  </button>
+
   <a class="govuk-link" href="#">Cancel</a>
-</div>
       </form>
 
   </div>
