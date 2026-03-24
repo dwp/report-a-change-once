@@ -1,4 +1,9 @@
 {
+  "engines":{
+    "node": "22.x",
+    "npm": "10.x"
+  },
+
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
@@ -7,7 +12,6 @@
   "dependencies": {
     "@dwp/dwp-frontend": "^3.3.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
     "govuk-frontend": "5.12.0",
     "govuk-prototype-kit": "13.18.1"
   }
