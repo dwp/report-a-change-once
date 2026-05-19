@@ -1,0 +1,58 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v04/report-a-change-once/select-your-new-address" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-heading-l">
+      Select your new address
+</h1>
+
+<p> 2 addresses found for <b>27</b> and <b>AA3 1AB</b> <a href="/path/of/page"> Change</a></p>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek">
+          Sunny Nursing Homes, 27 Albert Rd, London, AA3 1AB
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2" name="AreYouStillProvidingCareFor35HoursOrMoreEachWeek" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="AreYouStillProvidingCareFor35HoursOrMoreEachWeek-2">
+          27 Sage Road, London, AA3 1AB
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
