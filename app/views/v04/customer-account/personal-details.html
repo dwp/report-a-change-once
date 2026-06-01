@@ -121,10 +121,10 @@
     },
     {
       key: {
-        text: "Age"
+        text: "Mobile phone"
       },
       value: {
-        html: "42"
+        html: "07700 900 457"
       },
       actions: {
         items: [
@@ -138,10 +138,27 @@
     },
     {
       key: {
-        text: "Working situation"
+        text: "Home phone"
       },
       value: {
-        html: "Unable to work because of long-term sickness or disability"
+        html: "01234 567 890"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: "sarah.phillips@example.com"
       },
       actions: {
         items: [
@@ -159,16 +176,16 @@
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Person 3"
+      text: "Your benefits"
     }
   },
   rows: [
     {
       key: {
-        text: "Details known"
+        text: "Benefits"
       },
       value: {
-        html: "Yes"
+        html: "Bereavement benefit<br>Carer's Allowance<br>Attendance Allowance"
       },
       actions: {
         items: [
@@ -179,70 +196,19 @@
           }
         ]
       }
-    },
-    {
-      key: {
-        text: "Relationship to lead tenant"
-      },
-      value: {
-        html: "Child"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "relationship to lead tenant"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Age"
-      },
-      value: {
-        html: "7"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "age"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Working situation"
-      },
-      value: {
-        html: "Child under 16"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "working situation"
-          }
-        ]
-      }
     }
   ]
 }) }}
 
-<p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">Get proof of your benefits</a>
-</p>
-<p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">View your personal details</a>
-</p>
-<p class="govuk-body">
-  <a href="start-page.html" class="govuk-link govuk-link--no-visited-state">Tell DWP about a change</a>
-</p>
+<form action="/v04/customer-account/personal-details" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Go back to account home"
+        }) }}
+
+      </form>
 
     </div>
   </div>

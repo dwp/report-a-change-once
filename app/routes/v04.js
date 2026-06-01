@@ -96,6 +96,11 @@ router.post('/v04/report-a-change-once/check-answers', function(request, respons
 })
 
 
+router.post('/v04/customer-account/personal-details', function(request, response) {
+    response.redirect("/v04/customer-account/account-home")
+})
+
+
 // Drop out screens
 router.post('/v04/report-a-change-once/you-cannot-use-this-service/future-date', function(request, response) {
     response.redirect("/v04/customer-account/account-home")
