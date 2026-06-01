@@ -67,6 +67,35 @@ router.post('/v04/report-a-change-once/address/what-is-your-new-address', functi
     response.redirect("/v04/report-a-change-once/address/select-your-new-address")
 })
 
+router.post('/v04/report-a-change-once/address/select-your-new-address', function(request, response) {
+    response.redirect("/v04/report-a-change-once/have-you-moved-into-a-care-home")
+})
+
+router.post('/v04/report-a-change-once/address/enter-address-manually', function(request, response) {
+    response.redirect("/v04/report-a-change-once/have-you-moved-into-a-care-home")
+})
+
+router.post('/v04/report-a-change-once/have-you-moved-into-a-care-home', function(req, res) {
+
+  // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
+  var careHomeDecision = req.session.data['careHome']
+
+  // Check whether the variable matches a condition
+  if (careHomeDecision == "no"){
+    // Send user to next page
+    res.redirect('/v04/report-a-change-once/check-answers')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/care-home')
+  }
+
+})
+
+router.post('/v04/report-a-change-once/check-answers', function(request, response) {
+    response.redirect("/v04/report-a-change-once/confirmation")
+})
+
+
 // Drop out screens
 router.post('/v04/report-a-change-once/you-cannot-use-this-service/future-date', function(request, response) {
     response.redirect("/v04/customer-account/account-home")

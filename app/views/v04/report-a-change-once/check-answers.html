@@ -1,0 +1,139 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "Date of move"
+            },
+            value: {
+              text: "17 March 2026"
+            },
+            actions: {
+              items: [
+                {
+                  href: "when-did-you-move",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Permanent or temporary move"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "permanent-or-temporary-move",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: "England and Wales"
+            },
+            actions: {
+              items: [
+                {
+                  href: "which-country-do-you-live-in",
+                  text: "Change",
+                  visuallyHiddenText: "customer reference"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "New address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "address/what-is-your-new-address",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Moved to a care home"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "have-you-moved-into-a-care-home",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      
+
+      <h2 class="govuk-heading-m">Now send your changes</h2>
+
+      <p class="govuk-body">By submitting this change you agree that, to the best of your knowledge, the details you are providing are complete and correct.</p>
+
+      <p class="govuk-body">If you give wrong or incomplete information, or you do not report changes straight away, you may:</p>
+            
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be prosecuted</li>
+        <li>need to pay a financial penalty</li>
+        <li>have your benefits reduced or stopped</li>
+        <li>be paid too much and have to pay the money back</li>
+      </ul>
+
+      <form action="/v04/report-a-change-once/check-answers" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

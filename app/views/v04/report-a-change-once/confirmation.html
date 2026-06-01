@@ -1,0 +1,48 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "We have received your change of address"
+        
+      }) }}
+
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Based on your answers, you have moved within England and Wales.
+      </p>
+      <p class="govuk-body">
+        We do not need to reassess your claim and your payments will continue.
+      </p>
+      <p class="govuk-body">
+        Your changes will be sent to the relevant benefit offices. It can take [timeframe] to process them.
+      </p>
+
+      <h2 class="govuk-heading-m">How to report changes for your other benefits</h2>
+
+      <p class="govuk-body">
+        To report changes to [benefit name] you need to <a href="#">contact [benefit line]</a>.
+      </p>
+
+      <!--p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p-->
+
+
+    </div>
+  </div>
+
+{% endblock %}
