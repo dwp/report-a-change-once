@@ -7,9 +7,37 @@ router.get('/v04/index.html', function(request, response) {
 
 // Declare the RACO start point - when did you move?
 router.get('/v04/report-a-change-once/index.html', function(request, response) {
-    response.redirect("/v04/report-a-change-once/when-did-you-move")
+    response.redirect("/v04/report-a-change-once/start")
 })
 
+
+router.post('/v04/report-a-change-once/start', function(request, response) {
+    response.redirect("/v04/report-a-change-once/have-you-moved-into-your-new-address")
+})
+
+router.post('/v04/report-a-change-once/have-you-moved-into-your-new-address', function (req, res) {
+
+  // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
+  var haveYouMoved = req.session.data['haveYouMoved']
+
+  // Check whether the variable matches a condition
+  if (haveYouMoved == "yes"){
+    // Send user to next page
+    res.redirect('/v04/report-a-change-once/when-did-you-move')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/future-date')
+  }
+
+})
+
+router.post('/v04/report-a-change-once/when-did-you-move', function(request, response) {
+    response.redirect("/v04/report-a-change-once/permanent-or-temporary-move")
+})
+
+/* 
+ * Use this to work out if date entry is in the future - just in case we drop the "Have you moved" question.
+ * 
 router.post('/v04/report-a-change-once/when-did-you-move', function (req, res) {
   const day = req.body["move-date-day"]
   const month = req.body["move-date-month"]
@@ -30,6 +58,7 @@ router.post('/v04/report-a-change-once/when-did-you-move', function (req, res) {
   // Otherwise (today or past)
   res.redirect('/v04/report-a-change-once/permanent-or-temporary-move')
 })
+  */
 
 router.post('/v04/report-a-change-once/permanent-or-temporary-move', function (req, res) {
 
@@ -55,10 +84,26 @@ router.post('/v04/report-a-change-once/which-country-do-you-live-in', function (
   // Check whether the variable matches a condition
   if (country == "englandAndWales"){
     // Send user to next page
-    res.redirect('/v04/report-a-change-once/address/what-is-your-new-address')
+    res.redirect('/v04/report-a-change-once/what-type-of-property')
   } else {
     // Send user to ineligible page
     res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales')
+  }
+
+})
+
+router.post('/v04/report-a-change-once/what-type-of-property', function (req, res) {
+
+  // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
+  var propertyType = req.session.data['propertyType']
+
+  // Check whether the variable matches a condition
+  if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
+    // Send user to next page
+    res.redirect('/v04/report-a-change-once/address/what-is-your-new-address')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/care-home')
   }
 
 })
@@ -68,33 +113,20 @@ router.post('/v04/report-a-change-once/address/what-is-your-new-address', functi
 })
 
 router.post('/v04/report-a-change-once/address/select-your-new-address', function(request, response) {
-    response.redirect("/v04/report-a-change-once/have-you-moved-into-a-care-home")
+    response.redirect("/v04/report-a-change-once/address/confirm-address")
 })
 
 router.post('/v04/report-a-change-once/address/enter-address-manually', function(request, response) {
-    response.redirect("/v04/report-a-change-once/have-you-moved-into-a-care-home")
+    response.redirect("/v04/report-a-change-once/confirm-address")
 })
 
-router.post('/v04/report-a-change-once/have-you-moved-into-a-care-home', function(req, res) {
-
-  // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
-  var careHomeDecision = req.session.data['careHome']
-
-  // Check whether the variable matches a condition
-  if (careHomeDecision == "no"){
-    // Send user to next page
-    res.redirect('/v04/report-a-change-once/check-answers')
-  } else {
-    // Send user to ineligible page
-    res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/care-home')
-  }
-
+router.post('/v04/report-a-change-once/address/confirm-address', function(request, response) {
+    response.redirect("/v04/report-a-change-once/check-answers")
 })
 
 router.post('/v04/report-a-change-once/check-answers', function(request, response) {
     response.redirect("/v04/report-a-change-once/confirmation")
 })
-
 
 router.post('/v04/customer-account/personal-details', function(request, response) {
     response.redirect("/v04/customer-account/account-home")
@@ -111,6 +143,10 @@ router.post('/v04/report-a-change-once/you-cannot-use-this-service/temporary-add
 })
 
 router.post('/v04/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales', function(request, response) {
+    response.redirect("/v04/customer-account/account-home")
+})
+
+router.post('/v04/report-a-change-once/you-cannot-use-this-service/care-home', function(request, response) {
     response.redirect("/v04/customer-account/account-home")
 })
 

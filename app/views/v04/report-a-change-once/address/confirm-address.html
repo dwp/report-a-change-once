@@ -1,0 +1,49 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v04/report-a-change-once/address/confirm-address" method="post">
+
+        <h1 class="govuk-heading-l">
+          Confirm address
+        </h1>
+
+        <p class="govuk-body"> 2 addresses found for <strong>SW1H 9NA</strong> <a href="/v04/report-a-change-once/address/what-is-your-new-address"> Change</a></p>
+    
+        <p class="govuk-body">
+          2 Caxton House<br />
+          Tothill Street<br />
+          London<br />
+          SW1H 9NA
+        </p>
+
+        {{ govukButton({
+          text: "Use this address"
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="select-your-new-address" class="govuk-link govuk-link--no-visited-state">Use a different address</a>
+    </p>
+
+    <p class="govuk-body">
+      <a href="enter-address-manually" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

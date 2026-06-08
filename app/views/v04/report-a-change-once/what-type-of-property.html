@@ -1,0 +1,56 @@
+{% extends "layouts/main-3-RACO.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v04/report-a-change-once/what-type-of-property" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "propertyType",
+  fieldset: {
+    legend: {
+      text: "What type of property is your new address?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "houseBungalow",
+      text: "House or bungalow"
+    },
+    {
+      value: "flatApartmentAnnexe",
+      text: "Flat, apartment or annexe"
+    },
+    {
+      value: "careHome",
+      text: "Care home"
+    },
+    {
+      value: "hospital",
+      text: "Hospital"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}
