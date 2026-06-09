@@ -65,6 +65,15 @@
     name: "addressPostcode",
     autocomplete: "postal-code"
   }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Country"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-country",
+    name: "addressCountry"
+  }) }}
   
         {{ govukButton({
           text: "Continue"

@@ -15,11 +15,27 @@
 
       <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
 
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
         rows: [
+          {
+            key: {
+              text: "Have you moved"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "have-you-moved-into-your-new-address",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
           {
             key: {
               text: "Date of move"
@@ -73,10 +89,27 @@
           },
           {
             key: {
+              text: "Type of property"
+            },
+            value: {
+              text: "House or bungalow"
+            },
+            actions: {
+              items: [
+                {
+                  href: "what-type-of-property",
+                  text: "Change",
+                  visuallyHiddenText: "customer reference"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "New address"
             },
             value: {
-              html: "27 Sage Road<br>London<br>AA3 1AB"
+              html: "1 Washington Street<br />Worcester<br />England<br />WR1 1NL"
             },
             actions: {
               items: [
@@ -84,23 +117,6 @@
                   href: "address/what-is-your-new-address",
                   text: "Change",
                   visuallyHiddenText: "address"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Moved to a care home"
-            },
-            value: {
-              html: "No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "have-you-moved-into-a-care-home",
-                  text: "Change",
-                  visuallyHiddenText: "contact details"
                 }
               ]
             }

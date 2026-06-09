@@ -113,14 +113,10 @@ router.post('/v04/report-a-change-once/address/what-is-your-new-address', functi
 })
 
 router.post('/v04/report-a-change-once/address/select-your-new-address', function(request, response) {
-    response.redirect("/v04/report-a-change-once/address/confirm-address")
+    response.redirect("/v04/report-a-change-once/check-answers")
 })
 
 router.post('/v04/report-a-change-once/address/enter-address-manually', function(request, response) {
-    response.redirect("/v04/report-a-change-once/confirm-address")
-})
-
-router.post('/v04/report-a-change-once/address/confirm-address', function(request, response) {
     response.redirect("/v04/report-a-change-once/check-answers")
 })
 

@@ -1,14 +1,32 @@
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.
-    </span>
-  </p>
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{% from "language-toggle/macro.njk" import dwpLanguageToggle %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half">
+      {{
+          dwpLanguageToggle({
+              selectedLang: "en",
+              href: {
+                  en: "/patterns/toggle-to-welsh/examples/en",
+                  cy: "/patterns/toggle-to-welsh/examples/cy"
+              }
+          })
+      }}
+    </div>
+  </div>
 </div>
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
