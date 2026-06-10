@@ -12,9 +12,12 @@ router.get('/v04/report-a-change-once/index.html', function(request, response) {
 
 
 router.post('/v04/report-a-change-once/start', function(request, response) {
-    response.redirect("/v04/report-a-change-once/have-you-moved-into-your-new-address")
+    response.redirect("/v04/report-a-change-once/when-did-you-move")
 })
 
+/* 
+ * Use this to work out if date entry is in the future.
+ * 
 router.post('/v04/report-a-change-once/have-you-moved-into-your-new-address', function (req, res) {
 
   // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
@@ -34,10 +37,8 @@ router.post('/v04/report-a-change-once/have-you-moved-into-your-new-address', fu
 router.post('/v04/report-a-change-once/when-did-you-move', function(request, response) {
     response.redirect("/v04/report-a-change-once/permanent-or-temporary-move")
 })
+  */
 
-/* 
- * Use this to work out if date entry is in the future - just in case we drop the "Have you moved" question.
- * 
 router.post('/v04/report-a-change-once/when-did-you-move', function (req, res) {
   const day = req.body["move-date-day"]
   const month = req.body["move-date-month"]
@@ -58,7 +59,6 @@ router.post('/v04/report-a-change-once/when-did-you-move', function (req, res) {
   // Otherwise (today or past)
   res.redirect('/v04/report-a-change-once/permanent-or-temporary-move')
 })
-  */
 
 router.post('/v04/report-a-change-once/permanent-or-temporary-move', function (req, res) {
 
@@ -122,6 +122,10 @@ router.post('/v04/report-a-change-once/address/enter-address-manually', function
 
 router.post('/v04/report-a-change-once/check-answers', function(request, response) {
     response.redirect("/v04/report-a-change-once/confirmation")
+})
+
+router.post('/v04/report-a-change-once/confirmation', function(request, response) {
+    response.redirect("/v04/customer-account/account-home")
 })
 
 router.post('/v04/customer-account/personal-details', function(request, response) {
