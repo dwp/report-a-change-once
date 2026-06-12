@@ -23,11 +23,17 @@
 
       <p class="govuk-body">To tell us about a move to Scotland, Northern Ireland or another country <a href="">contact your benefit office (opens in a new tab)</a>.</p>
 
-      <form class="form" action="/v04/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales" method="post">
+      <div class="govuk-button-group">
         {{ govukButton({
-          text: "Go back to account home"
+          text: "Sign out",
+          href: "/index"
         }) }}
-      </form>
+        {{ govukButton({
+          text: "Find address",
+          classes: "govuk-button--secondary",
+          href: "/v04/customer-account/account-home"
+        }) }}
+      </div>
 
     </div>
   </div>

@@ -16,16 +16,22 @@
       <h1 class="govuk-heading-l">
         You cannot use this service
       </h1>
-      
+
       <p class="govuk-body">This is because your address must be where you live now. </p>
 
       <p class="govuk-body">When you have moved, you can use this service to tell us your new address.</p>
 
-      <form class="form" action="/v04/report-a-change-once/you-cannot-use-this-service/future-date" method="post">
+      <div class="govuk-button-group">
         {{ govukButton({
-          text: "Go back to account home"
+          text: "Sign out",
+          href: "/index"
         }) }}
-      </form>
+        {{ govukButton({
+          text: "Find address",
+          classes: "govuk-button--secondary",
+          href: "/v04/customer-account/account-home"
+        }) }}
+      </div>
 
     </div>
   </div>

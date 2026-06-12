@@ -40,15 +40,17 @@
         <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
       </p-->
 
-      <form action="/v04/report-a-change-once/confirmation" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
-
+      <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue to account home"
+          text: "Sign out",
+          href: "/index"
         }) }}
-
-      </form>
+        {{ govukButton({
+          text: "Find address",
+          classes: "govuk-button--secondary",
+          href: "/v04/customer-account/account-home"
+        }) }}
+      </div>
 
     </div>
   </div>
