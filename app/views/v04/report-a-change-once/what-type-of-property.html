@@ -16,6 +16,20 @@
       <form class="form" action="/v04/report-a-change-once/what-type-of-property" method="post">
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+
+{% set otherHtml %}
+{{ govukInput({
+  id: "otherInput",
+  name: "otherInput",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Other property type"
+  }
+}) }}
+{% endset -%}
+
 {{ govukRadios({
   name: "propertyType",
   fieldset: {
@@ -28,19 +42,18 @@
   items: [
     {
       value: "houseBungalow",
-      text: "House or bungalow"
-    },
-    {
-      value: "flatApartmentAnnexe",
-      text: "Flat, apartment or annexe"
+      text: "A house, flat or apartment"
     },
     {
       value: "careHome",
       text: "Care home"
     },
     {
-      value: "hospital",
-      text: "Hospital"
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
     }
   ]
 }) }}
