@@ -82,9 +82,9 @@ router.post('/v04/report-a-change-once/which-country-do-you-live-in', function (
   var country = req.session.data['country']
 
   // Check whether the variable matches a condition
-  if (country == "englandAndWales"){
+  if (country === "england" || country === "wales") {  
     // Send user to next page
-    res.redirect('/v04/report-a-change-once/what-type-of-property')
+    res.redirect('/v04/report-a-change-once/have-you-moved-into-a-care-home')
   } else {
     // Send user to ineligible page
     res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales')
@@ -99,6 +99,22 @@ router.post('/v04/report-a-change-once/what-type-of-property', function (req, re
 
   // Check whether the variable matches a condition
   if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
+    // Send user to next page
+    res.redirect('/v04/report-a-change-once/address/what-is-your-new-address')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v04/report-a-change-once/you-cannot-use-this-service/care-home')
+  }
+
+})
+
+router.post('/v04/report-a-change-once/have-you-moved-into-a-care-home', function (req, res) {
+
+  // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
+  var careHome = req.session.data['careHome']
+
+  // Check whether the variable matches a condition
+  if (careHome == "no"){
     // Send user to next page
     res.redirect('/v04/report-a-change-once/address/what-is-your-new-address')
   } else {
