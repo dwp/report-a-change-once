@@ -1,0 +1,74 @@
+{% extends "layouts/tell-dwp-about-a-change.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v04/report-a-change-once/address/select-your-new-address" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "selectAddress",
+          fieldset: {
+            legend: {
+              text: "Select your new address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: "<p> 6 addresses found for <strong>wr11nl</strong> and <strong>1</strong> <a href='/v04/report-a-change-once/address/what-is-your-new-address'> Change</a></p>"
+          },
+          items: [
+            {
+              value: "1",
+              text: "1 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              value: "10",
+              text: "10 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              value: "11",
+              text: "11 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              value: "101",
+              text: "101 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              value: "110",
+              text: "110 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              value: "111",
+              text: "111 Washington Street, Worcester, England WR1 1NL"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

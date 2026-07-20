@@ -1,0 +1,57 @@
+{% extends "layouts/tell-dwp-about-a-change.html" %}
+
+{% block pageTitle %}
+  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v04/report-a-change-once/address/what-is-your-new-address" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <div class="govuk-width-container">
+          <h1 class="govuk-heading-l">Find your new address</h1>
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-!-width-two-thirds",
+            hint: {
+              text: "For example, AA3 1AB."
+            },
+            id: "postcode",
+            name: "postcode"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Building number or name"
+            },
+            classes: "govuk-!-width-two-thirds",
+            hint: {
+              text: "For example, 15 or Prospect Cottage."
+            },
+            id: "searchString",
+            name: "searchString"
+          }) }}
+
+          {{ govukButton({
+            text: "Find address"
+          }) }}
+          <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-address-manually" class="govuk-link">Enter address manually</a></p>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

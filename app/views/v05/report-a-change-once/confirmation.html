@@ -1,0 +1,55 @@
+{% extends "layouts/tell-dwp-about-a-change.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/v04/includes/alpha-header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "We have received your change of address"
+        
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Your change will be sent to the relevant benefit office. It can take up to 7 days to process.
+      </p>
+      <p class="govuk-body">
+        Your new home address will be shown on the personal details page when it is processed.
+      </p>
+
+      <h2 class="govuk-heading-m">Tell us about changes for your other benefits</h2>
+
+      <p class="govuk-body">
+        To report changes to Pension Credit you need to contact the benefit team directly.
+      </p>
+
+      <p class="govuk-body">
+        Find their contact details in a letter they have sent to you, or in <a href="#">guidance about the benefit on GOV.UK (opens in a new tab)</a>.
+      </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign out",
+          href: "/index"
+        }) }}
+        {{ govukButton({
+          text: "Go back to account home",
+          classes: "govuk-button--secondary",
+          href: "/v04/customer-account/account-home"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
