@@ -1,11 +1,12 @@
 {% extends "layouts/customer-account/personal-details.html" %}
+{% set title = "Personal details" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ title }} – Customer view
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/v04/includes/alpha-header.html" %}
+{% include "/v05/includes/alpha-header.html" %}
 {% endblock %}
 
 {% block content %}
@@ -13,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">Personal details</h1>
+<h1 class="govuk-heading-xl">{{ title }}</h1>
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
@@ -68,7 +69,7 @@
       actions: {
         items: [
           {
-            href: "/v04/report-a-change-once/index.html",
+            href: "/v05/report-a-change-once/index.html",
             text: "Change",
             visuallyHiddenText: "whether details are known"
           }
@@ -128,7 +129,7 @@
   ]
 }) }}
 
-<form action="/v04/customer-account/personal-details" method="post" novalidate>
+<form action="/v05/customer-account/personal-details" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

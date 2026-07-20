@@ -1,5 +1,5 @@
 {
-  "serviceName": "Report a change once",
+  "serviceName": "Tell DWP about a change",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true

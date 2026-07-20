@@ -1,18 +1,18 @@
 module.exports = function (router) {
 
 // Declare the entry point service - customer account
-router.get('/v05/index.html', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.get('/v05/index.html', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
 // Declare the RACO start point - when did you move?
-router.get('/v05/report-a-change-once/index.html', function(request, response) {
-    response.redirect("/v05/report-a-change-once/start")
+router.get('/v05/report-a-change-once/index.html', function(req, res) {
+    res.redirect("/v05/report-a-change-once/start")
 })
 
 
-router.post('/v05/report-a-change-once/start', function(request, response) {
-    response.redirect("/v05/report-a-change-once/when-did-you-move")
+router.post('/v05/report-a-change-once/start', function(req, res) {
+    res.redirect("/v05/report-a-change-once/when-did-you-move-to-your-new-address")
 })
 
 /* 
@@ -26,7 +26,7 @@ router.post('/v05/report-a-change-once/have-you-moved-into-your-new-address', fu
   // Check whether the variable matches a condition
   if (haveYouMoved == "yes"){
     // Send user to next page
-    res.redirect('/v05/report-a-change-once/when-did-you-move')
+    res.redirect('/v05/report-a-change-once/when-did-you-move-to-your-new-address')
   } else {
     // Send user to ineligible page
     res.redirect('/v05/report-a-change-once/you-cannot-use-this-service/future-date')
@@ -34,12 +34,12 @@ router.post('/v05/report-a-change-once/have-you-moved-into-your-new-address', fu
 
 })
 
-router.post('/v05/report-a-change-once/when-did-you-move', function(request, response) {
-    response.redirect("/v05/report-a-change-once/permanent-or-temporary-move")
+router.post('/v05/report-a-change-once/when-did-you-move-to-your-new-address', function(req, res) {
+    res.redirect("/v05/report-a-change-once/is-this-move-permanent-or-temporary")
 })
   */
 
-router.post('/v05/report-a-change-once/when-did-you-move', function (req, res) {
+router.post('/v05/report-a-change-once/when-did-you-move-to-your-new-address', function (req, res) {
   const day = req.body["move-date-day"]
   const month = req.body["move-date-month"]
   const year = req.body["move-date-year"]
@@ -57,10 +57,10 @@ router.post('/v05/report-a-change-once/when-did-you-move', function (req, res) {
   }
 
   // Otherwise (today or past)
-  res.redirect('/v05/report-a-change-once/permanent-or-temporary-move')
+  res.redirect('/v05/report-a-change-once/is-this-move-permanent-or-temporary')
 })
 
-router.post('/v05/report-a-change-once/permanent-or-temporary-move', function (req, res) {
+router.post('/v05/report-a-change-once/is-this-move-permanent-or-temporary', function (req, res) {
 
   // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
   var permanentTempMove = req.session.data['permanentOrTemporary']
@@ -68,7 +68,7 @@ router.post('/v05/report-a-change-once/permanent-or-temporary-move', function (r
   // Check whether the variable matches a condition
   if (permanentTempMove == "permanent"){
     // Send user to next page
-    res.redirect('/v05/report-a-change-once/which-country-do-you-live-in')
+    res.redirect('/v05/report-a-change-once/which-country-is-your-new-address-in')
   } else {
     // Send user to ineligible page
     res.redirect('/v05/report-a-change-once/you-cannot-use-this-service/temporary-address')
@@ -76,7 +76,7 @@ router.post('/v05/report-a-change-once/permanent-or-temporary-move', function (r
 
 })
 
-router.post('/v05/report-a-change-once/which-country-do-you-live-in', function (req, res) {
+router.post('/v05/report-a-change-once/which-country-is-your-new-address-in', function (req, res) {
 
   // Make a variable and give it the value from 'permanentTempMove' to take the value of the radio list name
   var country = req.session.data['country']
@@ -100,7 +100,7 @@ router.post('/v05/report-a-change-once/what-type-of-property', function (req, re
   // Check whether the variable matches a condition
   if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
     // Send user to next page
-    res.redirect('/v05/report-a-change-once/address/what-is-your-new-address')
+    res.redirect('/v05/report-a-change-once/address/find-your-new-address')
   } else {
     // Send user to ineligible page
     res.redirect('/v05/report-a-change-once/you-cannot-use-this-service/care-home')
@@ -116,7 +116,7 @@ router.post('/v05/report-a-change-once/have-you-moved-into-a-care-home', functio
   // Check whether the variable matches a condition
   if (careHome == "no"){
     // Send user to next page
-    res.redirect('/v05/report-a-change-once/address/what-is-your-new-address')
+    res.redirect('/v05/report-a-change-once/address/find-your-new-address')
   } else {
     // Send user to ineligible page
     res.redirect('/v05/report-a-change-once/you-cannot-use-this-service/care-home')
@@ -124,46 +124,50 @@ router.post('/v05/report-a-change-once/have-you-moved-into-a-care-home', functio
 
 })
 
-router.post('/v05/report-a-change-once/address/what-is-your-new-address', function(request, response) {
-    response.redirect("/v05/report-a-change-once/address/select-your-new-address")
+router.post('/v05/report-a-change-once/address/find-your-new-address', function(req, res) {
+    res.redirect("/v05/report-a-change-once/address/select-your-new-address")
 })
 
-router.post('/v05/report-a-change-once/address/select-your-new-address', function(request, response) {
-    response.redirect("/v05/report-a-change-once/check-answers")
+router.post('/v05/report-a-change-once/address/select-your-new-address', function(req, res) {
+    res.redirect("/v05/report-a-change-once/address/confirm-address")
 })
 
-router.post('/v05/report-a-change-once/address/enter-address-manually', function(request, response) {
-    response.redirect("/v05/report-a-change-once/check-answers")
+router.post('/v05/report-a-change-once/address/confirm-address', function(req, res) {
+    res.redirect("/v05/report-a-change-once/check-your-answers")
 })
 
-router.post('/v05/report-a-change-once/check-answers', function(request, response) {
-    response.redirect("/v05/report-a-change-once/confirmation")
+router.post('/v05/report-a-change-once/address/enter-address-manually', function(req, res) {
+    res.redirect("/v05/report-a-change-once/check-your-answers")
 })
 
-router.post('/v05/report-a-change-once/confirmation', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/check-your-answers', function(req, res) {
+    res.redirect("/v05/report-a-change-once/confirmation")
 })
 
-router.post('/v05/customer-account/personal-details', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/confirmation', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
+})
+
+router.post('/v05/customer-account/personal-details', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
 
 // Drop out screens
-router.post('/v05/report-a-change-once/you-cannot-use-this-service/future-date', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/you-cannot-use-this-service/future-date', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
-router.post('/v05/report-a-change-once/you-cannot-use-this-service/temporary-address', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/you-cannot-use-this-service/temporary-address', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
-router.post('/v05/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
-router.post('/v05/report-a-change-once/you-cannot-use-this-service/care-home', function(request, response) {
-    response.redirect("/v05/customer-account/account-home")
+router.post('/v05/report-a-change-once/you-cannot-use-this-service/care-home', function(req, res) {
+    res.redirect("/v05/customer-account/account-home")
 })
 
 }

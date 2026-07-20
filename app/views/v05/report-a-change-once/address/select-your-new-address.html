@@ -1,11 +1,12 @@
 {% extends "layouts/tell-dwp-about-a-change.html" %}
+{% set title = "Select your new address" %}
 
 {% block pageTitle %}
-  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ title }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/v04/includes/alpha-header.html" %}
+{% include "/v05/includes/alpha-header.html" %}
 {% endblock %}
 
 {% block content %}
@@ -13,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v04/report-a-change-once/address/select-your-new-address" method="post">
+      <form class="form" action="/v05/report-a-change-once/address/select-your-new-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -21,13 +22,13 @@
           name: "selectAddress",
           fieldset: {
             legend: {
-              text: "Select your new address",
+              text: title,
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            html: "<p> 6 addresses found for <strong>wr11nl</strong> and <strong>1</strong> <a href='/v04/report-a-change-once/address/what-is-your-new-address'> Change</a></p>"
+            html: "<p> 6 addresses found for <strong>wr11nl</strong> and <strong>1</strong> <a href='/v05/report-a-change-once/address/find-your-new-address'> Change</a></p>"
           },
           items: [
             {
@@ -53,6 +54,13 @@
             {
               value: "111",
               text: "111 Washington Street, Worcester, England WR1 1NL"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "address-not-listed",
+              text: "My address is not listed"
             }
           ]
         }) }}
@@ -62,11 +70,6 @@
         }) }}
 
       </form>
-
-    <p class="govuk-body">
-      <a href="#" class="govuk-link govuk-link--no-visited-state">My address is not listed</a>
-    </p>
-
 
     </div>
   </div>

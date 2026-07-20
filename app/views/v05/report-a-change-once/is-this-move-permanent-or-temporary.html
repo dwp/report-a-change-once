@@ -1,5 +1,5 @@
 {% extends "layouts/tell-dwp-about-a-change.html" %}
-{% set title = "Have you moved into a care home?" %}
+{% set title = "Is this move permanent or temporary?" %}
 
 {% block pageTitle %}
    {{ title }} – {{ serviceName }}
@@ -14,13 +14,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v05/report-a-change-once/have-you-moved-into-a-care-home" method="post">
+      <form class="form" action="/v05/report-a-change-once/is-this-move-permanent-or-temporary" method="post">
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "careHome",
+  name: "permanentOrTemporary",
   fieldset: {
     legend: {
       text: title,
@@ -30,12 +29,12 @@
   },
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "permanent",
+      text: "Permanent"
     },
     {
-      value: "no",
-      text: "No"
+      value: "temporary",
+      text: "Temporary"
     }
   ]
 }) }}

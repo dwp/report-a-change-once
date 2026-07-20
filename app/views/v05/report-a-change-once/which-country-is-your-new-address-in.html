@@ -1,11 +1,12 @@
 {% extends "layouts/tell-dwp-about-a-change.html" %}
+{% set title = "Which country is your new address in?" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ title }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/v04/includes/alpha-header.html" %}
+{% include "/v05/includes/alpha-header.html" %}
 {% endblock %}
 
 {% block content %}
@@ -13,27 +14,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v04/report-a-change-once/permanent-or-temporary-move" method="post">
-
+      <form class="form" action="/v05/report-a-change-once/which-country-is-your-new-address-in" method="post">
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "permanentOrTemporary",
+  name: "country",
   fieldset: {
     legend: {
-      text: "Is the move permanent or temporary?",
+      text: title,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
     {
-      value: "permanent",
-      text: "Permanent"
+      value: "england",
+      text: "England"
     },
     {
-      value: "temporary",
-      text: "Temporary"
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "northernIreland",
+      text: "Northern Ireland"
+    },
+    {
+      value: "anotherCountry",
+      text: "Another country"
     }
   ]
 }) }}

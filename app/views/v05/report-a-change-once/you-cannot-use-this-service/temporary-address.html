@@ -1,11 +1,12 @@
 {% extends "layouts/tell-dwp-about-a-change.html" %}
+{% set title = "You cannot use this service" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ title }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/v04/includes/alpha-header.html" %}
+{% include "/v05/includes/alpha-header.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        You cannot use this service
+        {{ title }}
       </h1>
 
       <p class="govuk-body">You can only change your permanent home address online.</p>
@@ -37,7 +38,7 @@
         {{ govukButton({
           text: "Go back to account home",
           classes: "govuk-button--secondary",
-          href: "/v04/customer-account/account-home"
+          href: "/v05/customer-account/account-home"
         }) }}
       </div>
 

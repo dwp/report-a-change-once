@@ -1,11 +1,12 @@
 {% extends "layouts/tell-dwp-about-a-change.html" %}
+{% set title = "Confirm address" %}
 
 {% block pageTitle %}
-  Change details – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ title }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "/v04/includes/alpha-header.html" %}
+{% include "/v05/includes/alpha-header.html" %}
 {% endblock %}
 
 {% block content %}
@@ -13,19 +14,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v04/report-a-change-once/address/confirm-address" method="post">
+      <form class="form" action="/v05/report-a-change-once/address/confirm-address" method="post">
 
         <h1 class="govuk-heading-l">
-          Confirm address
+          {{ title }}
         </h1>
 
-        <p class="govuk-body"> 2 addresses found for <strong>SW1H 9NA</strong> <a href="/v04/report-a-change-once/address/what-is-your-new-address"> Change</a></p>
-    
+        <p>6 addresses found for <strong>wr11nl</strong> and <strong>1</strong> <a href='/v05/report-a-change-once/address/find-your-new-address'> Change</a></p>
+
         <p class="govuk-body">
-          2 Caxton House<br />
-          Tothill Street<br />
-          London<br />
-          SW1H 9NA
+          1 Washington Street<br />Worcester<br />England<br />WR1 1NL
         </p>
 
         {{ govukButton({
