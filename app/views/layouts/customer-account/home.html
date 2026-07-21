@@ -3,24 +3,56 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
+{% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% block header %}
 
-{{ govukHeader() }}
+{% block govukHeader %}
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "/test-signout",
+    oneLoginLink: "/test-one-login",
+    homepageLink: "/index.html",
+    lng: "eng"
+  }) }}
+{% endblock %}
 
-<section aria-label="Service information" class="govuk-service-navigation"
-  data-module="govuk-service-navigation">
-  <div class="govuk-width-container">
-    <div class="govuk-service-navigation__container">
-      <span class="govuk-service-navigation__service-name">
-        <a href="../index.html" class="govuk-service-navigation__link">
-          Manage your benefits and State Pension
-        </a>
-      </span>
+{{ govukServiceNavigation({
+  serviceName: "Manage your benefits and State Pension",
+  serviceUrl: "../index.html"
+}) }}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+{% from "language-toggle/macro.njk" import dwpLanguageToggle %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half">
+      {{
+          dwpLanguageToggle({
+              selectedLang: "en",
+              href: {
+                  en: "/patterns/toggle-to-welsh/examples/en",
+                  cy: "/patterns/toggle-to-welsh/examples/cy"
+              }
+          })
+      }}
     </div>
   </div>
-</section>
+</div>
 
 {% endblock %}
