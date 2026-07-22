@@ -1,4 +1,4 @@
-{% extends "layouts/raco.html" %}
+{% extends "layouts/main.html" %}
 
 {% set title = "Change your address: Attendance Allowance" %}
 
@@ -28,7 +28,7 @@
         Find their contact details in a letter they have sent to you, or in <a href="">guidance about the benefit on GOV.UK (opens in a new tab)</a>.
       </p>
 
-      <form class="form" action="/v05/report-a-change-once/start" method="post">
+      <form class="form" method="post">
         {{ govukButton({
           text: "Continue"
         }) }}

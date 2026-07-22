@@ -8,7 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Require any prototype version specific routes files
 
-require('./routes/v05')(router)
+require('./routes/v05/journey-1')(router)
 require('./routes/v04')(router)
 
 // Add your routes here

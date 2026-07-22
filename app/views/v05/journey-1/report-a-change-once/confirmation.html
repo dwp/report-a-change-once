@@ -1,4 +1,5 @@
-{% extends "layouts/raco.html" %}
+{% set showBackLink = false %}
+{% extends "layouts/main.html" %}
 
 {% set title = "We have received your change of address" %}
 
@@ -13,7 +14,6 @@
 
       {{ govukPanel({
         titleText: title
-        
       }) }}
 
       <h2 class="govuk-heading-m">What happens next</h2>
@@ -43,7 +43,7 @@
         {{ govukButton({
           text: "Go back to account home",
           classes: "govuk-button--secondary",
-          href: "/v05/customer-account/account-home"
+          href: "/v05/journey-1/customer-account/account-home"
         }) }}
       </div>
 

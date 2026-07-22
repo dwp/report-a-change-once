@@ -1,4 +1,4 @@
-{% extends "layouts/raco.html" %}
+{% extends "layouts/main.html" %}
 
 {% set title = "Select your new address" %}
 
@@ -11,7 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v05/report-a-change-once/address/select-your-new-address" method="post">
+      <form class="form" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 

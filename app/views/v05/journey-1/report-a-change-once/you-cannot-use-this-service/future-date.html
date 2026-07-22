@@ -1,4 +1,4 @@
-{% extends "layouts/raco.html" %}
+{% extends "layouts/main.html" %}
 
 {% set title = "You cannot use this service" %}
 
@@ -15,17 +15,11 @@
         {{ title }}
       </h1>
 
-      <p class="govuk-body">You can only change your permanent home address online.</p>
+      <p class="govuk-body">Based on your answer, you have not moved yet.</p>
 
-      <p class="govuk-body">This is because this is a new service.</p> 
+      <p class="govuk-body">When you have moved, you can use this service to tell us your new address.</p>
 
-      <p class="govuk-body">
-        To report changes you can contact the benefit team directly.
-      </p>
-
-      <p class="govuk-body">
-        Find their contact details in a letter they have sent to you, or in <a href="#">guidance about the benefit on GOV.UK (opens in a new tab)</a>.
-      </p>
+      <p class="govuk-body"><a href="../when-did-you-move-to-your-new-address.html">Change date of move</a></p>
 
       <div class="govuk-button-group">
         {{ govukButton({
@@ -35,7 +29,7 @@
         {{ govukButton({
           text: "Go back to account home",
           classes: "govuk-button--secondary",
-          href: "/v05/customer-account/account-home"
+          href: "/v05/journey-1/customer-account/account-home"
         }) }}
       </div>
 

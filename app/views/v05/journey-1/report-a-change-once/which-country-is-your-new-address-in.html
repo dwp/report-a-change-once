@@ -1,6 +1,6 @@
-{% extends "layouts/raco.html" %}
+{% extends "layouts/main.html" %}
 
-{% set title = "Is this move permanent or temporary?" %}
+{% set title = "Which country is your new address in?" %}
 
 {% block pageTitle %}
    {{ title }} – {{ serviceName }}
@@ -11,12 +11,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v05/report-a-change-once/is-this-move-permanent-or-temporary" method="post">
-
+      <form class="form" method="post">
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "permanentOrTemporary",
+  name: "country",
   fieldset: {
     legend: {
       text: title,
@@ -26,12 +25,24 @@
   },
   items: [
     {
-      value: "permanent",
-      text: "Permanent"
+      value: "england",
+      text: "England"
     },
     {
-      value: "temporary",
-      text: "Temporary"
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "northernIreland",
+      text: "Northern Ireland"
+    },
+    {
+      value: "anotherCountry",
+      text: "Another country"
     }
   ]
 }) }}

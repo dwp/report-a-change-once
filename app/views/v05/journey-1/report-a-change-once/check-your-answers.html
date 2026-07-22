@@ -1,4 +1,4 @@
-{% extends "layouts/raco.html" %}
+{% extends "layouts/main.html" %}
 
 {% set title = "Check your answers" %}
 
@@ -120,7 +120,7 @@
         <li>be paid too much and have to pay the money back</li>
       </ul>
 
-      <form action="/v05/report-a-change-once/check-your-answers" method="post" novalidate>
+      <form method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
