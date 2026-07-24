@@ -13,9 +13,25 @@
 
 <p>TBC</p>
 
-<p class="govuk-!-margin-bottom-9" ><a class="govuk-link" href="/v05/journey-1/index.html">View version 5</a></p>
+<p><a class="govuk-link" href="/v05/journey-1/index.html">View version 5</a></p>
 
-<span class="govuk-caption-l">May 2026</span>
+{% call govukDetails({
+  summaryText: "Other screens"
+}) %}
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="/v05/journey-1/report-a-change-once/address/no-address-found.html">No address found</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="/v05/journey-1/report-a-change-once/service-unavailable/purposely-unavailable.html">Service unavailable - purposely</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="/v05/journey-1/report-a-change-once/service-unavailable/500-internal-server-error.html">Service unavailable - 500 internal server error</a>
+    </li>
+  </ul>
+{% endcall %}
+
+<span class="govuk-caption-l govuk-!-margin-top-9">May 2026</span>
 <h2 class="govuk-heading-l">Version four prototype</h2>
 
 <p><strong>Please note:</strong> Following a review at the end of alpha, the MVP scope has changed. This version of the prototype reflects the proposed new scope and cohort as of 3 June 2026:</p>
