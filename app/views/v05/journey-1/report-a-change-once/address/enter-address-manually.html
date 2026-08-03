@@ -47,15 +47,6 @@
 
   {{ govukInput({
     label: {
-      text: "County (optional)"
-    },
-    classes: "govuk-!-width-two-thirds",
-    id: "address-county",
-    name: "addressCounty"
-  }) }}
-
-  {{ govukInput({
-    label: {
       text: "Postcode"
     },
     classes: "govuk-input--width-10",
@@ -64,14 +55,6 @@
     autocomplete: "postal-code"
   }) }}
 
-  {{ govukInput({
-    label: {
-      text: "Country"
-    },
-    classes: "govuk-!-width-two-thirds",
-    id: "address-country",
-    name: "addressCountry"
-  }) }}
   
         {{ govukButton({
           text: "Continue"

@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Check your answers" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ title }}</h1>
+
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "Permanent or temporary move?"
+            },
+            value: {
+              text: "Permanent"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../is-this-move-permanent-or-temporary",
+                  text: "Change",
+                  visuallyHiddenText: "permanent or temporary move"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of move"
+            },
+            value: {
+              text: "17 March 2026"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../when-did-you-move-to-your-new-address",
+                  text: "Change",
+                  visuallyHiddenText: "date of move"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: "England"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../which-country-is-your-new-address-in",
+                  text: "Change",
+                  visuallyHiddenText: "country"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "New address"
+            },
+            value: {
+              html: "20 Dorchester Road<br />Bury St Edmunds<br />IP33 1LT"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../address/find-your-new-address",
+                  text: "Change",
+                  visuallyHiddenText: "new address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Property type"
+            },
+            value: {
+              text: "House"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../what-type-of-property",
+                  text: "Change",
+                  visuallyHiddenText: "property type"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      
+
+      <h2 class="govuk-heading-m">Now send your changes</h2>
+
+      <p class="govuk-body">By submitting this change you agree that, to the best of your knowledge, the details you are providing are complete and correct.</p>
+
+      <p class="govuk-body">If you give wrong or incomplete information, or you do not report changes straight away, you may:</p>
+            
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be prosecuted</li>
+        <li>need to pay a financial penalty</li>
+        <li>have your benefits reduced or stopped</li>
+        <li>be paid too much and have to pay the money back</li>
+      </ul>
+
+      <form method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -15,7 +15,23 @@ router.get(`${baseUrl}/report-a-change-once/index.html`, function(req, res) {
 })
 
 router.post(`${baseUrl}/report-a-change-once/start`, function(req, res) {
+    res.redirect(`${baseUrl}/report-a-change-once/is-this-move-permanent-or-temporary`)
+})
+
+router.post(`${baseUrl}/report-a-change-once/is-this-move-permanent-or-temporary`, function (req, res) {
+
+  // Make a variable and give it the value from 'permanentOrTemporary' to take the value of the radio list name
+  var permanentTempMove = req.session.data['permanentOrTemporary']
+
+  // Check whether the variable matches a condition
+  if (permanentTempMove == "permanent"){
+    // Send user to next page
     res.redirect(`${baseUrl}/report-a-change-once/when-did-you-move-to-your-new-address`)
+  } else {
+    // Send user to ineligible page
+    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/temporary-address`)
+  }
+
 })
 
 router.post(`${baseUrl}/report-a-change-once/when-did-you-move-to-your-new-address`, function (req, res) {
@@ -36,55 +52,7 @@ router.post(`${baseUrl}/report-a-change-once/when-did-you-move-to-your-new-addre
   }
 
   // Otherwise (today or past)
-  res.redirect(`${baseUrl}/report-a-change-once/is-this-move-permanent-or-temporary`)
-})
-
-router.post(`${baseUrl}/report-a-change-once/is-this-move-permanent-or-temporary`, function (req, res) {
-
-  // Make a variable and give it the value from 'permanentOrTemporary' to take the value of the radio list name
-  var permanentTempMove = req.session.data['permanentOrTemporary']
-
-  // Check whether the variable matches a condition
-  if (permanentTempMove == "permanent"){
-    // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-in`)
-  } else {
-    // Send user to ineligible page
-    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/temporary-address`)
-  }
-
-})
-
-router.post(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-in`, function (req, res) {
-
-  // Make a variable and give it the value from 'country' to take the value of the radio list name
-  var country = req.session.data['country']
-
-  // Check whether the variable matches a condition
-  if (country === "england" || country === "wales") { 
-    // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home`)
-  } else {
-    // Send user to ineligible page
-    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales`)
-  }
-
-})
-
-router.post(`${baseUrl}/report-a-change-once/what-type-of-property`, function (req, res) {
-
-  // Make a variable and give it the value from 'propertyType' to take the value of the radio list name
-  var propertyType = req.session.data['propertyType']
-
-  // Check whether the variable matches a condition
-  if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
-    // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/address/find-your-new-address`)
-  } else {
-    // Send user to ineligible page
-    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/care-home`)
-  }
-
+  res.redirect(`${baseUrl}/report-a-change-once/address/find-your-new-address`)
 })
 
 router.post(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home`, function (req, res) {
@@ -104,6 +72,15 @@ router.post(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home`, f
 })
 
 router.post(`${baseUrl}/report-a-change-once/address/find-your-new-address`, function(req, res) {
+    const postcode = req.body.postcode
+        ?.replace(/\s+/g, ' ')
+        .trim()
+        .toUpperCase()
+
+    if (postcode === 'IP33 1LT') {
+        return res.redirect(`${baseUrl}/report-a-change-once/address/no-address-found`)
+    }
+
     res.redirect(`${baseUrl}/report-a-change-once/address/select-your-new-address`)
 })
 
@@ -124,14 +101,10 @@ router.post(`${baseUrl}/report-a-change-once/address/select-your-new-address`, f
 })
 
 router.post(`${baseUrl}/report-a-change-once/address/confirm-address`, function(req, res) {
-    res.redirect(`${baseUrl}/report-a-change-once/check-your-answers`)
+    res.redirect(`${baseUrl}/report-a-change-once/check-answers/journey-1`)
 })
 
-router.post(`${baseUrl}/report-a-change-once/address/enter-address-manually`, function(req, res) {
-    res.redirect(`${baseUrl}/report-a-change-once/check-your-answers`)
-})
-
-router.post(`${baseUrl}/report-a-change-once/check-your-answers`, function(req, res) {
+router.post(`${baseUrl}/report-a-change-once/check-answers/journey-1`, function(req, res) {
     res.redirect(`${baseUrl}/report-a-change-once/confirmation`)
 })
 
@@ -143,6 +116,47 @@ router.post(`/${version}/customer-account/personal-details`, function(req, res) 
     res.redirect(`${baseUrl}/customer-account/account-home`)
 })
 
+// No address found - manual adress entry
+
+router.post(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-in`, function (req, res) {
+
+  // Make a variable and give it the value from 'country' to take the value of the radio list name
+  var country = req.session.data['country']
+
+  // Check whether the variable matches a condition
+  if (country === "england" || country === "wales") { 
+    // Send user to next page
+    res.redirect(`${baseUrl}/report-a-change-once/address/enter-address-manually`)
+  } else {
+    // Send user to ineligible page
+    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales`)
+  }
+
+})
+
+router.post(`${baseUrl}/report-a-change-once/address/enter-address-manually`, function(req, res) {
+    res.redirect(`${baseUrl}/report-a-change-once/what-type-of-property`)
+})
+
+router.post(`${baseUrl}/report-a-change-once/what-type-of-property`, function (req, res) {
+
+  // Make a variable and give it the value from 'propertyType' to take the value of the radio list name
+  var propertyType = req.session.data['propertyType']
+
+  // Check whether the variable matches a condition
+  if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
+    // Send user to next page
+    res.redirect(`${baseUrl}/report-a-change-once/check-answers/journey-2`)
+  } else {
+    // Send user to ineligible page
+    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/care-home`)
+  }
+
+})
+
+router.post(`${baseUrl}/report-a-change-once/check-answers/journey-2`, function(req, res) {
+    res.redirect(`${baseUrl}/report-a-change-once/confirmation`)
+})
 
 // Drop out screens
 router.post(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/future-date`, function(req, res) {
