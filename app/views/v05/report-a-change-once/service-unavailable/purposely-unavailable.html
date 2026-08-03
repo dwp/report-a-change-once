@@ -1,7 +1,7 @@
 {% set showBackLink = false %}
 {% extends "layouts/main.html" %}
 
-{% set title = "Sorry, there is a problem with this service" %}
+{% set title = "Sorry, this service is unavailable" %}
 
 {% block pageTitle %}
    {{ title }} – {{ serviceName }}
@@ -15,7 +15,7 @@
       <h1 class="govuk-heading-l">
         {{ title }}
       </h1>
-      <p class="govuk-body">Try again later.</p>
+      <p class="govuk-body">You will be able to use the service later.</p>
 
       <p class="govuk-body">We have not saved your answers. When the service is available, you will have to start again.</p>
 
@@ -31,7 +31,7 @@
         {{ govukButton({
           text: "Go back to account home",
           classes: "govuk-button--secondary",
-          href: "/v05/journey-1/customer-account/account-home"
+          href: "/v05/customer-account/account-home"
         }) }}
       </div>
 

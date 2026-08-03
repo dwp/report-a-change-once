@@ -1,8 +1,7 @@
 module.exports = function (router) {
 
 const version = 'v05'
-const journey = 'journey-1'
-const baseUrl = `/${version}/${journey}`
+const baseUrl = `/${version}`
 
 // Declare the entry point service - customer account
 router.get(`${baseUrl}/index.html`, function(req, res) {
@@ -92,7 +91,7 @@ router.post(`${baseUrl}/report-a-change-once/address/select-your-new-address`, f
   // Check whether the variable matches a condition
   if (selectAddress == "address-not-listed"){
     // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/address/enter-address-manually`)
+    res.redirect(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-in`)
   } else {
     // Send user to ineligible page
     res.redirect(`${baseUrl}/report-a-change-once/address/confirm-address`)

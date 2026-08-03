@@ -1,7 +1,6 @@
-{% set showBackLink = false %}
 {% extends "layouts/main.html" %}
 
-{% set title = "We have received your change of address" %}
+{% set title = "You cannot use this service" %}
 
 {% block pageTitle %}
    {{ title }} – {{ serviceName }}
@@ -12,23 +11,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukPanel({
-        titleText: title
-      }) }}
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
 
-      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">You can only change your permanent home address online.</p>
 
-      <p class="govuk-body">
-        Your change will be sent to the relevant benefit office. It can take up to 7 days to process.
-      </p>
-      <p class="govuk-body">
-        Your new home address will be shown on the personal details page when it is processed.
-      </p>
-
-      <h2 class="govuk-heading-m">Tell us about changes for your other benefits</h2>
+      <p class="govuk-body">This is because this is a new service.</p> 
 
       <p class="govuk-body">
-        To report changes to Pension Credit you need to contact the benefit team directly.
+        To report changes you can contact the benefit team directly.
       </p>
 
       <p class="govuk-body">
@@ -43,7 +35,7 @@
         {{ govukButton({
           text: "Go back to account home",
           classes: "govuk-button--secondary",
-          href: "/v05/journey-1/customer-account/personal-details-banner"
+          href: "/v05/customer-account/account-home"
         }) }}
       </div>
 
