@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Change your address: Attendance Allowance" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      {%- from "moj/components/interruption-card/macro.njk" import interruptionCard -%}
+
+      {% call interruptionCard({
+        heading: title,
+        primaryAction: {
+          text: "Continue",
+          href: "#"
+        }
+        }) -%}
+        <p>
+          You can only use this service to change your address for Attendance Allowance at the moment.
+        </p>
+        <p>
+          To change your address for your other benefits you will need to contact each benefit office directly. We will let you know how to do this later.
+        </p>
+      {%- endcall %}
+
+  </div>
+
+{% endblock %}
