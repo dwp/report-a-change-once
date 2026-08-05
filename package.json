@@ -12,7 +12,6 @@
     "@dwp/dwp-frontend": "^4.1.0",
     "@govuk-one-login/service-header": "^6.0.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@ministryofjustice/frontend": "^10.0.1",
     "govuk-frontend": "^6.4.0",
     "govuk-prototype-kit": "latest"
   }

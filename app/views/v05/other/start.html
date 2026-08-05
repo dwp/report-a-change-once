@@ -10,22 +10,26 @@
 
   <div class="govuk-grid-row">
 
-      {%- from "moj/components/interruption-card/macro.njk" import interruptionCard -%}
-
-      {% call interruptionCard({
-        heading: title,
-        primaryAction: {
-          text: "Continue",
-          href: "#"
+      {% call govukPanel({
+        titleText: title,
+        classes: "govuk-panel--interruption",
+        actions: {
+          items: [
+            {
+              text: "Continue",
+              href: "#",
+              type: "button"
+            }
+          ]
         }
-        }) -%}
-        <p>
+      }) %}
+        <p class="govuk-body">
           You can only use this service to change your address for Attendance Allowance at the moment.
         </p>
-        <p>
+        <p class="govuk-body">
           To change your address for your other benefits you will need to contact each benefit office directly. We will let you know how to do this later.
         </p>
-      {%- endcall %}
+      {% endcall %}
 
   </div>
 

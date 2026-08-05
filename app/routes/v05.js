@@ -54,22 +54,6 @@ router.post(`${baseUrl}/report-a-change-once/when-did-you-move-to-your-new-addre
   res.redirect(`${baseUrl}/report-a-change-once/address/find-your-new-address`)
 })
 
-router.post(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home`, function (req, res) {
-
-  // Make a variable and give it the value from 'careHome' to take the value of the radio list name
-  var careHome = req.session.data['careHome']
-
-  // Check whether the variable matches a condition
-  if (careHome == "no"){
-    // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/address/find-your-new-address`)
-  } else {
-    // Send user to ineligible page
-    res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/care-home`)
-  }
-
-})
-
 router.post(`${baseUrl}/report-a-change-once/address/find-your-new-address`, function(req, res) {
     const postcode = req.body.postcode
         ?.replace(/\s+/g, ' ')
@@ -125,7 +109,7 @@ router.post(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-i
   // Check whether the variable matches a condition
   if (country === "england" || country === "wales") { 
     // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/address/enter-address-manually`)
+    res.redirect(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home-or-hospital`)
   } else {
     // Send user to ineligible page
     res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/not-in-england-and-wales`)
@@ -133,24 +117,28 @@ router.post(`${baseUrl}/report-a-change-once/which-country-is-your-new-address-i
 
 })
 
-router.post(`${baseUrl}/report-a-change-once/address/enter-address-manually`, function(req, res) {
-    res.redirect(`${baseUrl}/report-a-change-once/what-type-of-property`)
-})
+router.post(`${baseUrl}/report-a-change-once/have-you-moved-into-a-care-home-or-hospital`, function (req, res) {
 
-router.post(`${baseUrl}/report-a-change-once/what-type-of-property`, function (req, res) {
-
-  // Make a variable and give it the value from 'propertyType' to take the value of the radio list name
-  var propertyType = req.session.data['propertyType']
+  // Make a variable and give it the value from 'careHome' to take the value of the radio list name
+  var careHome = req.session.data['careHome']
 
   // Check whether the variable matches a condition
-  if (propertyType === "houseBungalow" || propertyType === "flatApartmentAnnexe") {    
+  if (careHome == "no"){
     // Send user to next page
-    res.redirect(`${baseUrl}/report-a-change-once/check-answers/journey-2`)
+    res.redirect(`${baseUrl}/report-a-change-once/address/enter-address-manually`)
   } else {
     // Send user to ineligible page
     res.redirect(`${baseUrl}/report-a-change-once/you-cannot-use-this-service/care-home`)
   }
 
+})
+
+router.post(`${baseUrl}/report-a-change-once/address/enter-address-manually`, function(req, res) {
+    res.redirect(`${baseUrl}/report-a-change-once/address/confirm-manual-address`)
+})
+
+router.post(`${baseUrl}/report-a-change-once/address/confirm-manual-address`, function(req, res) {
+    res.redirect(`${baseUrl}/report-a-change-once/check-answers/journey-2`)
 })
 
 router.post(`${baseUrl}/report-a-change-once/check-answers/journey-2`, function(req, res) {
