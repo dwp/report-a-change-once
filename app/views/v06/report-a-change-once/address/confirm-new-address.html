@@ -19,9 +19,9 @@
 
         <p>6 addresses found for <strong>{{ data['postcode'] }}</strong> and <strong>1</strong>. <a href="find-your-new-address"> Search again</a></p>
 
-        <p class="govuk-body">
+        {% call govukInsetText() %}
           1 Washington Street<br />Worcester<br />England<br />WR1 1NL
-        </p>
+        {% endcall %}
 
         {{ govukButton({
           text: "Use this address"
