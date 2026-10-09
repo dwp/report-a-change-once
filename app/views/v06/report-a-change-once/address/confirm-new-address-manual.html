@@ -17,9 +17,9 @@
           {{ title }}
         </h1>
 
-        <p class="govuk-body">
+        {% call govukInsetText() %}
           20 Dorchester Road<br />Bury St Edmunds<br />IP33 1LT
-        </p>
+        {% endcall %}
 
         {{ govukButton({
           text: "Use this address"
